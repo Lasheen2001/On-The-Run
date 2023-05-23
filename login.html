@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Login</title>
+    <link rel="stylesheet" href="project.css">
+    <script src="register.js"></script>
+    <style>
+        #login {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="validation">
+        <h1 class="text-center pt-3">Login</h1>
+        <h5 class="text-center">Login to your bank account</h5>
+        <br>
+        <form>
+            <div class="row-lg-12" style="padding-left:35px ;">
+                <input id="email" class="text" style="width: 87%;" type="email" placeholder="Email" required>
+            </div>
+            <br>
+
+            <div class="row-lg-12" style="padding-left:35px ; padding-bottom: 35px;">
+                <input id="pass" class="text" style="width: 87%;" type="password" placeholder="Password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,25}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required>
+            </div>
+            <div class="row-lg-12" style="padding-left: 35px;">
+                <button id="loginbtn" onclick="checkExist();"
+                    style="width: 87%; height: 50px;font-weight: bold;color: white;background-color: rgb(98, 203, 94);border: none; margin-bottom: 30px;">
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
+
+</body>
