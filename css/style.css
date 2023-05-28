@@ -831,5 +831,45 @@ section.app_section .img-box img {
   color: #636363;
 }
 
+#paymentOption {
+  margin: 10px 0;
+  padding: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+#paymentOption option {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+#paymentAmountField {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+#paymentAmountField label {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #000000;
+}
+
+#paymentAmountField input[type="number"] {
+  padding: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  color: #000000;
+}
+
+
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
