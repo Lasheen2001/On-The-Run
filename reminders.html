@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reminders 🔔</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="text"]::placeholder,
+      input[type="date"]::placeholder {
+        color: #999;
+      }
+
+      input[type="submit"] {
+        width: auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      #reminderList {
+        margin-top: 20px;
+      }
+
+      #reminderItems {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #reminderItems li {
+        margin-bottom: 10px;
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 4px;
+      }
+
+      .deleteButton {
+        background-color: #ff4f4f;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Reminders 🔔</h1>
+
+    <div id="paymentForm">
+      <div class="form-group">
+        <label for="paymentType">Payment Type:</label>
+        <select id="paymentType">
+          <option value="water">Water</option>
+          <option value="gas">Gas</option>
+          <option value="telephone">Telephone</option>
+          <option value="electricity">Electricity</option>
+          <option value="creditCard">Credit Card</option>
+          <option value="loan">Loan</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" placeholder="Select due date" />
+      </div>
+
+      <div class="form-group">
+        <label for="reminderMessage">Reminder Message:</label>
+        <input
+          type="text"
+          id="reminderMessage"
+          placeholder="Enter reminder message"
+        />
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Set Reminder" onclick="setReminder()" />
+        <div id="result"></div>
+      </div>
+    </div>
+
+    <div id="reminderList">
+      <h2>Upcoming Reminders</h2>
+      <ul id="reminderItems"></ul>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+
+      // Array to store reminders
+      const reminders = [];
+
+      const presetReminders = urlParams.get("reminders");
+
+      presetReminders.forEach(function (reminder) {
+        if (!containsReminder(reminder)) {
+          reminders.push(reminder);
+        }
+      });
+
+      function containsReminder(input) {
+        presetReminders.forEach(function (reminder) {
+          if (reminder === input) {
+            return false;
+          }
+        });
+        return true;
+      }
+
+      // Function to set a reminder
+      function setReminder() {
+        const paymentType = document.getElementById("paymentType").value;
+        const dueDate = document.getElementById("dueDate").value;
+        const reminderMessage =
+          document.getElementById("reminderMessage").value;
+
+        const reminder = {
+          paymentType: paymentType,
+          dueDate: dueDate,
+          reminderMessage: reminderMessage,
+        };
+
+        if (reminderMessage === "") {
+          document.getElementById("result").innerHTML =
+            "\<br>Please type a message for the reminder";
+          document.getElementById("result").style.color = "red";
+          return;
+        }
+
+        if (dueDate === "") {
+          document.getElementById("result").innerHTML =
+            "\<br>Please choose a date for the reminder";
+          document.getElementById("result").style.color = "red";
+          return;
+        }
+
+        document.getElementById("result").innerHTML =
+          "\<br>Reminder has been set successfuly";
+        document.getElementById("result").style.color = "green";
+
+        // addReminder(reminder);
+        reminders.push(reminder);
+        displayReminders();
+        clearForm();
+      }
+
+      function addReminder(value) {
+        const presetReminders = urlParams.get("reminders");
+
+        if (containsReminder(value)) {
+          document.getElementById("result").innerHTML =
+            "\<br>Reminder has already been set successfuly";
+          document.getElementById("result").style.color = "red";
+          return;
+        }
+
+        presetReminders.push(value);
+        urlParams.set("reminders", presetReminders);
+      }
+
+      // Function to display reminders
+      function displayReminders() {
+        const reminderItems = document.getElementById("reminderItems");
+        reminderItems.innerHTML = "";
+
+        reminders.forEach(function (reminder, index) {
+          const listItem = document.createElement("li");
+          listItem.textContent = `Payment Type: ${reminder.paymentType} | Due Date: ${reminder.dueDate} | Reminder: ${reminder.reminderMessage}`;
+
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "Delete";
+          deleteButton.classList.add("deleteButton");
+          deleteButton.addEventListener("click", function () {
+            deleteReminder(index);
+          });
+
+          listItem.appendChild(deleteButton);
+          reminderItems.appendChild(listItem);
+        });
+      }
+
+      // Function to delete a reminder
+      function deleteReminder(index) {
+        reminders.splice(index, 1);
+        displayReminders();
+      }
+
+      // Function to clear the form after setting a reminder
+      function clearForm() {
+        document.getElementById("paymentType").selectedIndex = 0;
+        document.getElementById("dueDate").value = "";
+        document.getElementById("reminderMessage").value = "";
+      }
+
+      displayReminders();
+    </script>
+  </body>
+</html>

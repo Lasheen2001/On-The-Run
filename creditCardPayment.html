@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Credit Card Payment 💳</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #45a049;
+      }
+
+      #result {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Credit Card Payment 💳</h1>
+    <div class="container">
+      <div class="form-group">
+        <label for="totalCardDebt">Total Card Debt:</label>
+        <span id="totalCardDebt"></span>
+        <label for="balance">Balance:</label>
+        <span id="balance"></span>
+      </div>
+      <div class="form-group">
+        <label for="paymentOption">Payment Option:</label>
+        <select id="paymentOption" onchange="togglePaymentAmountField()">
+          <option value="partial">Partial Payment</option>
+          <option value="full">Full Payment</option>
+        </select>
+      </div>
+      <div class="form-group" id="paymentAmountField">
+        <label for="paymentAmount">Payment Amount:</label>
+        <input
+          type="number"
+          id="paymentAmount"
+          placeholder="Enter payment amount"
+        />
+      </div>
+      <button class="btn" onclick="makePayment()">Make Payment</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      // Function to retrieve the total amount from the URL query parameter
+      function getTotalCardDebt() {
+        const totalAmount = urlParams.get("totalCardDebt");
+        return totalAmount ? parseFloat(totalAmount) : 100;
+      }
+
+      // Function to retrieve the balance from the URL query parameter
+      function getBalance() {
+        const totalAmount = urlParams.get("balance");
+        return totalAmount ? parseFloat(totalAmount) : 2000;
+      }
+
+      function changeAll(value) {
+        changeTotalCardDebt(value);
+        changeBalance(value);
+      }
+
+      // Function to change the total amount from the URL query parameter
+      function changeTotalCardDebt(value) {
+        urlParams.set("totalCardDebt", getTotalCardDebt() - value);
+      }
+
+      // Function to change the balance from the URL query parameter
+      function changeBalance(value) {
+        urlParams.set("balance", getBalance() - value);
+      }
+
+      function setAll() {
+        setTotalCardDebt();
+        setBalance();
+      }
+
+      // Function to set the total amount on the page
+      function setTotalCardDebt() {
+        const totalAmountElement = document.getElementById("totalCardDebt");
+        const totalAmount = getTotalCardDebt();
+        totalAmountElement.textContent = "$" + totalAmount.toFixed(2);
+      }
+
+      // Function to set the balance on the page
+      function setBalance() {
+        const totalAmountElement = document.getElementById("balance");
+        const totalAmount = getBalance();
+        totalAmountElement.textContent = "$" + totalAmount.toFixed(2);
+      }
+
+      // Function to toggle the visibility of the payment amount field based on the selected payment option
+      function togglePaymentAmountField() {
+        const paymentOption = document.getElementById("paymentOption").value;
+        const paymentAmountField =
+          document.getElementById("paymentAmountField");
+        if (paymentOption === "partial") {
+          paymentAmountField.classList.remove("hidden");
+        } else {
+          paymentAmountField.classList.add("hidden");
+        }
+      }
+
+      // Function to make the payment
+      function makePayment() {
+        const totalCardDebtElement = document.getElementById("totalCardDebt");
+        const totalCardDebt = getTotalCardDebt();
+        const balanceElement = document.getElementById("balance");
+        const balance = getBalance();
+        const paymentOption = document.getElementById("paymentOption").value;
+        let paymentAmount;
+
+        if (paymentOption === "partial") {
+          paymentAmount = parseFloat(
+            document.getElementById("paymentAmount").value
+          );
+          if (
+            isNaN(paymentAmount) ||
+            paymentAmount <= 0 ||
+            paymentAmount >= totalCardDebt
+          ) {
+            document.getElementById("result").innerHTML =
+              "Please enter a valid payment amount.";
+            document.getElementById("result").style.color = "red";
+            return;
+          }
+        } else {
+          paymentAmount = totalCardDebt;
+        }
+        if (paymentAmount > balance) {
+          document.getElementById("result").innerHTML =
+            "Ammount is greater than the balance.";
+          document.getElementById("result").style.color = "red";
+          return;
+        }
+        document.getElementById("result").innerHTML =
+          "Payment of $" +
+          paymentAmount.toFixed(2) +
+          " made. Remaining balance: $" +
+          (balance - paymentAmount).toFixed(2);
+        document.getElementById("result").style.color = "green";
+
+        // changeAll(paymentAmount);
+        // setAll();
+        totalCardDebtElement.textContent =
+          "$" + (totalCardDebt - paymentAmount).toFixed(2);
+        balanceElement.textContent = "$" + (balance - paymentAmount).toFixed(2);
+      }
+
+      // Set the initial total amount and toggle the payment amount field visibility
+      setAll();
+      togglePaymentAmountField();
+    </script>
+  </body>
+</html>

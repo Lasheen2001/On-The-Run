@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bank Transfer 💰</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        width: auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bank Transfer 💰</h1>
+
+    <div id="transferForm">
+      <div class="form-group">
+        <label for="balance">Balance:</label>
+        <span id="balance"></span>
+        <div><br /></div>
+        <label for="accountType">Account Type:</label>
+        <select id="accountType">
+          <option value="internal">Internal</option>
+          <option value="domestic">Domestic</option>
+          <option value="international">International</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="recipient">Recipient:</label>
+        <input type="text" id="recipient" placeholder="Enter recipient" />
+      </div>
+
+      <div class="form-group">
+        <label for="amount">Transfer Amount:</label>
+        <input
+          type="number"
+          id="amount"
+          step="0.01"
+          placeholder="Enter transfer amount"
+        />
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Transfer Money" onclick="transferMoney()" />
+      </div>
+    </div>
+
+    <div id="transferStatus">
+      <h2>Transfer Status</h2>
+      <p id="transferMessage"></p>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      // Function to transfer money
+      function transferMoney() {
+        const accountType = document.getElementById("accountType").value;
+        const recipient = document.getElementById("recipient").value;
+        const amount = parseFloat(document.getElementById("amount").value);
+        const balanceElement = document.getElementById("balance");
+
+        let transferMessage = "";
+
+        if (amount <= 0 || amount > getBalance() || isNaN(amount)) {
+          transferMessage = "Invalid transfer amount.";
+        } else if (recipient.trim() === "") {
+          transferMessage = "Recipient field cannot be empty.";
+        } else {
+          transferMessage = `Transfer successful. $${amount.toFixed(
+            2
+          )} has been transferred to ${recipient}.`;
+
+          if (accountType === "internal") {
+            transferMessage += " (Internal)";
+          } else if (accountType === "domestic") {
+            transferMessage += " (Domestic)";
+          } else if (accountType === "international") {
+            transferMessage += " (International)";
+          }
+          document.getElementById("transferMessage").textContent =
+            transferMessage;
+          document.getElementById("transferMessage").style.color = "green";
+          clearForm();
+
+          // changeBalance(amount);
+          // setBalance();
+          balanceElement.textContent = "$" + (getBalance() - amount).toFixed(2);
+
+          return;
+        }
+
+        document.getElementById("transferMessage").textContent =
+          transferMessage;
+        document.getElementById("transferMessage").style.color = "red";
+      }
+
+      // Function to clear the form after making a transfer
+      function clearForm() {
+        document.getElementById("accountType").selectedIndex = 0;
+        document.getElementById("recipient").value = "";
+        document.getElementById("amount").value = "";
+      }
+
+      // Function to retrieve the balance from the URL query parameter
+      function getBalance() {
+        const totalAmount = urlParams.get("balance");
+        return totalAmount ? parseFloat(totalAmount) : 2000;
+      }
+
+      // Function to change the balance from the URL query parameter
+      function changeBalance(value) {
+        urlParams.set("balance", getBalance() - value);
+      }
+
+      // Function to set the balance on the page
+      function setBalance() {
+        const totalAmountElement = document.getElementById("balance");
+        const totalAmount = getBalance();
+        totalAmountElement.textContent = "$" + totalAmount.toFixed(2);
+      }
+
+      setBalance();
+    </script>
+  </body>
+</html>
