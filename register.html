@@ -1,75 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Register</title>
-    <link rel="stylesheet" href="project.css">
-    <script src="register.js"></script>
-    <style>
-        #link {
-            text-decoration: none;
-            color: rgb(32, 128, 0);
-        }
-     </style>
+    <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Cryptop</title>
+
+  <!-- slider stylesheet -->
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <title>Register</title>
+  <link rel="stylesheet" href="project.css">
+  <script src="register.js"></script>
 </head>
 
 <body>
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+          <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+              <a class="navbar-brand" href="login.html">
+                <span>
+                  Cryptop
+                </span>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                  <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">About us <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="how.html"> Report an issue </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="register.html"> FAQs</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <!-- end header section -->
+        <!-- slider section -->
+    
+        <!-- end slider section -->
+      </div>
     <div class="validation">
-        <h2 class="text-center pt-3">Register</h2>
-        <p class="text-center">Create your account. It's free and only takes a minute.</p><br>
-        <form id="form">
-            <div id = "fName" class="row mb-3 ps-5">
-                <input style="width: 41%;" class="text" type="text" placeholder="First Name"
-                    required>&nbsp&nbsp&nbsp&nbsp
-                <input style="width: 41%;" class="text" type="text" placeholder="Last Name" required>
+        <h1 class="text-center pt-3">Register</h1>
+        <h5 class="text-center">Register in Cryptop Bank</h5>
+        <br>
+        <form>
+            <div class="row-lg-12 pb-3" style="padding-left:35px ;">
+                <input id="fName" class="text" style="width: 87%;" type="text" placeholder="First Name" required>
             </div>
-            <div id="lName" class="row-lg-12 mb-3" style="padding-left:35px ;">
-                <input id="bDate" class="text" style="width: 87%;" type="date" placeholder="Birthdate" required>
+            <div class="row-lg-12 pb-3" style="padding-left:35px ;">
+                <input id="lName" class="text" style="width: 87%;" type="text" placeholder="Last Name" required>
             </div>
-            <div class="row-lg-12 mb-3" style="padding-left:35px ;">
-                <input id="SSN" class="text" style="width: 87%;" type="text" placeholder="National ID" required>
+           
+            <div class="row-lg-12 pb-3" style="padding-left:35px ;">
+                <input id="birth date" class="text" style="width: 87%;" type="date" required>
             </div>
-            <div class="row-lg-12 mb-3" style="padding-left:35px ;">
-                <input id="phone" class="text" style="width: 87%;" type="text" placeholder="Phone Number" required>
+            <div class="row-lg-12 pb-3" style="padding-left:35px ;">
+                <input id="ssn" class="text" style="width: 87%;" type="number" placeholder="SSN" required>
             </div>
-
-            <div class="row-lg-12 mb-3" style="padding-left:35px ;">
+            <div class="row-lg-12 pb-3" style="padding-left:35px ;">
+                <input id="phone number" class="text" style="width: 87%;" type="number" placeholder="Phone number" required>
+            </div>
+            <div class="row-lg-12 pb-3" style="padding-left:35px ;">
                 <input id="email" class="text" style="width: 87%;" type="email" placeholder="Email" required>
             </div>
-
-            <div class="row-lg-12 mb-3" style="padding-left:35px ;">
-                <input style="width: 87%;" type="password" id="pass" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,25}"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>         
+            <div class="row-lg-12 pb-3" style="padding-left:35px ;">
+                <input id="pass" class="text" style="width: 87%;" type="password" placeholder="Password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,25}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required>
             </div>
-            <div class="row-lg-12 mb-3" style="padding-left:35px;">
-                Register as
-                <select id="registerType" name="User" type="text" style="width: 87%;">
-                    <option value="Client">Client</option> 
-                    <option value="Banker">Banker</option> 
-                    <option value="Admin">Admin</option> 
+            <div class="row-lg-12 pb-3" style="padding-left:35px ;">
+                <select id="type" style="width: 87%;" id="user_type" name="user_type">
+                    <option value="client">Client</option>
+                    <option value="banker">Banker</option>
+                    <option value="admin">Admin</option>
                 </select>
-            </div> 
+            </div>  
 
-            <div class="row-lg-12 ps-5">
-                <input type="checkbox" id="policy"  required>
-                I accept the <a id="link" href="#">Terms of Use</a> & <a id="link" href="#">Privacy Policy</a>
+            <div class="row-lg-12 pb-3" style="padding-left:35px ;">
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the <a href="terms.html" target="_blank" style="text-decoration: none;color: green;">terms of service</a>.
+                </label>
+                <br>
+                <label>
+                    <input  type="checkbox" name="privacy" required>
+                    I have read and agree to the <a href="#" target="_blank" style="text-decoration: none;color: green;">privacy policy</a>.
+                </label>
             </div>
-            <div>
-                <a style="font-size: large; justify-content: center; margin-left: 2in;color: rgb(32, 128, 0);" href="login.html">I already have an account</a>
+            <div class="text-center row-lg-12 pb-3">
+                <a href="login.html"style="font-size: 20px; color: green;text-decoration:underline"> I already have an account</a>
+            </div>
 
-            </div>       
-            <br>
-            <div class="row-lg-12" style="padding-left: 35px;">
-                <button type="submit" value="submit" id="btn" onclick="checkSimilarity(); "
+            <div class="row-lg-12 pb-3" style="padding-left: 35px;">
+                <button id="btn" onclick="checkSimilarity();"
                     style="width: 87%; height: 50px;font-weight: bold;color: white;background-color: rgb(98, 203, 94);border: none; margin-bottom: 30px;">
-                Register Now
+                    Register
                 </button>
             </div>
         </form>
     </div>
+    <section class="container-fluid footer_section">
+        <p>
+          &copy; 2023 All Rights Reserved By On The Run
+        </p>
+      </section>
+      <!-- footer section -->
+    
+      <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+      </script>
 </body>
-
-</html>

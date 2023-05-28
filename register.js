@@ -31,7 +31,7 @@ else{
 //Adds user to localstorage
 function addUser() {
  var array = [];
-  const user = { Email: document.getElementById('email').value, Pass: document.getElementById('pass').value, Type:document.getElementById('registerType').value };
+  const user = { Email: document.getElementById('email').value, Pass: document.getElementById('pass').value, Type:document.getElementById('type').value };
   if(localStorage.getItem('key')===null){
     array.push(user);
     localStorage.setItem('key', JSON.stringify(array));
@@ -50,7 +50,6 @@ function addUser() {
 function checkExist(){
     var found ;
     var type;
-    var botton = document.getElementById('loginbtn')
     var email = document.getElementById('email').value;
     var pass = document.getElementById('pass').value;
     var str= localStorage.getItem('key');
@@ -72,14 +71,16 @@ function checkExist(){
 
 }
       if(Boolean(found) === true){
-        if(type === 'Client'){
-          window.open('bank_account.html');
+        if(type === 'client'){
+          window.open('index.html');
+          window.close('login.html');
+          // window.location.href='index.html';
         }
         else{
-          if(type === 'Banker')
-            window.open('banker_account.html');
+          if(type === 'banker')
+          window.location.href='banker_account.html';
           else
-            window.open('admin_account.html');
+          window.location.href='admin_account.html';
         }
       }
       else{
