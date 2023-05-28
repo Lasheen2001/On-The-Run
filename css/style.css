@@ -870,6 +870,47 @@ section.app_section .img-box img {
   color: #000000;
 }
 
+#paymentForm {
+  padding: 20px;
+}
+
+#paymentType {
+  margin-bottom: 20px;
+}
+
+#paymentType label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#paymentType select,
+#dueDate,
+#reminderMessage {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#dueDate {
+  margin-bottom: 20px;
+}
+
+#reminderItems {
+  background-color: #f4f4f4;
+}
+
+.deleteButton {
+  border-radius: 5px;
+  background-color: rgb(141, 24, 24);
+  color: white;
+  border: none;
+}
+
+
 
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
