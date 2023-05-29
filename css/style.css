@@ -3,6 +3,22 @@ body {
   color: #000000;
   background-color: #ffffff;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  background-color: black;
+  color: #636363;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+}
 
 .layout_padding {
   padding: 70px 0;
