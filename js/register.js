@@ -47,6 +47,7 @@ function addUser() {
     newUser.push(user);
     localStorage.setItem("key", JSON.stringify(newUser));
   }
+  alert("User added successfully");
 }
 
 //This is for checking if user is reistered or not when logging in
