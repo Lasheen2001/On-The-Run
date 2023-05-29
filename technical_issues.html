@@ -84,28 +84,29 @@
   }
 
   body {
-  height: 100%;
-}
+      height: 100%;
+    }
 
-.wrapper {
-  min-height: 100%;
-  position: relative;
-}
+    .wrapper {
+      min-height: 100%;
+      position: relative;
+    }
 
-.content {
-  padding-bottom: 60px; /* Adjust this value based on your footer's height */
-}
+    .content {
+      padding-bottom: 60px;
+      /* Adjust this value based on your footer's height */
+    }
 
-.footer {
-  background-color: black;
-  color: #636363;
-  text-align: center;
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  width: 100%;
-  padding: 20px 0;
-}
+    .footer {
+      background-color: black;
+      color: #636363;
+      text-align: center;
+      position: absolute;
+      bottom: -150px;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+    }
   </style>
 </head>
 
@@ -194,22 +195,8 @@
              </div>
             </div>
         </form>
-   
-        <script>
-          function submitForm() {
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var issue = document.getElementById("issue").value;
-            if (name === "" || email === "" || issue === "") {
-              alert("Please fill out all fields.");
-            } else {
-              alert("Thank you for reporting the issue. Our technical support team will look into it.");
-              // send form data to server using AJAX or other means
-            }
-          }
-          </script>
-   
-    
+
+        
   </div>
   <div
 class="d-flex justify-content-start align-items-center mt-3"
@@ -230,10 +217,24 @@ style="padding-bottom: 20px"
   Back
 </button>
 </div>
-  <footer class="footer">
-    <p>
-        &copy; 2023 All Rights Reserved By On The Run
-    </p>
+<footer class="footer">
+  <p>
+    &copy; 2023 All Rights Reserved By On The Run
+  </p>
 </footer>
-    </div>
+</div>
 </body>
+
+<script>
+  function submitForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var issue = document.getElementById("issue").value;
+    if (name === "" || email === "" || issue === "") {
+      alert("Please fill out all fields.");
+    } else {
+      alert("Thank you for reporting the issue. Our technical support team will look into it.");
+      // send form data to server using AJAX or other means
+    }
+  }
+  </script>
