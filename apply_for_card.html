@@ -83,10 +83,35 @@
     margin-right: auto;
     margin-left: auto;
   }
+
+  body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.content {
+  padding-bottom: 60px; /* Adjust this value based on your footer's height */
+}
+
+.footer {
+  background-color: black;
+  color: #636363;
+  text-align: center;
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+}
   </style>
 </head>
 
 <body>
+    <div class="wrapper">
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -129,13 +154,13 @@
     <!-- end slider section -->
   </div>
   <!-- Credit card form -->
-<section>
+  <section>
     <div class="row" id="box">
       <div class="col-md-8 mb-4" id="lol">
         <div class="card mb-4"id="form">
-            <div class="heading_container" style="margin-top: 20px; margin-bottom: 20px;">
-                <h2>Credit Card Application </h2>
-              </div>
+          <div class="heading_container" style="margin-top: 20px; margin-bottom: 20px;">
+            <h2>Credit Card Application</h2>
+          </div>
           <div class="card-body">
             <form>
               <!-- 2 column grid layout with text inputs for the first and last names -->
@@ -146,25 +171,25 @@
                     <input type="text" id="form6Example1" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
                   </div>
                 </div>
-                
+  
                 <div class="col">
                   <div class="form-outline">
                     <label class="form-label" for="form6Example2">Last name</label>
-                    <input type="text" id="form6Example2" class="form-control"style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
+                    <input type="text" id="form6Example2" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
                   </div>
                 </div>
               </div>
-              
-
+  
+  
               <!-- Text input -->
               <div class="row mb-4">
-                <div class="col"style="margin-bottom: -25px;">
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="form6Example3">Birth date</label>
-                        <input type="date" id="form6Example3" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
-                      </div>
+                <div class="col" style="margin-bottom: -25px;">
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example3">Birth date</label>
+                    <input type="date" id="form6Example3" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
+                  </div>
                 </div>
-              
+  
                 <div class="col">
                   <div class="form-outline">
                     <label class="form-label" for="form6Example6">Phone</label>
@@ -172,7 +197,7 @@
                   </div>
                 </div>
               </div>
-              
+  
               <!-- Text input -->
               <div class="form-outline" style="margin-bottom: 20px;">
                 <label class="form-label" for="form6Example4">Address</label>
@@ -183,16 +208,16 @@
                 <label class="form-label" for="form6Example5">Email</label>
                 <input type="email" id="form6Example5" class="form-control" placeholder="example@gmail.com" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
               </div>
-              
+  
               <div class="form-outline mb-4">
                 <label class="form-label" for="form6Example4">Name on card</label>
-                <input type="text" id="form6Example4" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
+                <input type="text" id="nameOnCard" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
               </div>
-              
+  
               <hr class="my-4" />
   
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="checkoutForm1"  />
+                <input class="form-check-input" type="checkbox" value="" id="checkoutForm1" />
                 <label class="form-check-label" for="checkoutForm1">
                   Shipping address is the address above
                 </label>
@@ -206,120 +231,47 @@
               </div>
   
               <hr class="my-4" />
-              
-
-            
-            <div class="d-flex justify-content-center mt-4" id="btn">
-                <button class="btn btn-primary btn-lg btn-custom bg-dark text-white">
-                  <a href="index.html" style="color: white;">
-                  Apply
-                </a>
-                </button>
-           
+  
+              <div class="d-flex justify-content-center mt-4" id="btn">
+                <a href="credit_card_home.html" class="btn btn-primary btn-lg btn-custom" onclick="checkForm(event)" style="background-color: black; color: white;">Apply</a>
               </div>
-     
-
             </form>
           </div>
         </div>
-      </div>
       </div>
     </div>
     <div class="d-flex justify-content-start align-items-center mt-3" id="btn" style="padding-bottom: 20px;">
-        <button class="btn btn-primary btn-lg btn-custom bg-dark text-white mr-2" onclick="window.location.href='index.html'" style="margin-top: -180 px;margin-left: 30px;">Back</button>
-      </div>
-  </section>
-  <section class="info_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_contact">
-            <div class="info_logo">
-              <a href="index.html">
-                <span> Bank X </span>
-              </a>
-            </div>
-            <h5>Contact Us</h5>
-            <div>
-              <div class="img-box">
-                <img src="images/location.png" width="18px" alt="" />
-              </div>
-              <p>Page when looking at its layou</p>
-            </div>
-            <div>
-              <div class="img-box">
-                <img src="images/phone.png" width="18px" alt="" />
-              </div>
-              <p>+01 1234567890</p>
-            </div>
-            <div>
-              <div class="img-box">
-                <img src="images/envelope.png" width="18px" alt="" />
-              </div>
-              <p>demo@gmail.com</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_info">
-            <h5>Invest Money</h5>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form, by
-              injected humour,
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="info_links">
-            <h5>Useful Links</h5>
-            <ul>
-              <li>
-                <a href=""> There are many </a>
-              </li>
-              <li>
-                <a href=""> variations of </a>
-              </li>
-              <li>
-                <a href=""> passages of </a>
-              </li>
-              <li>
-                <a href=""> Lorem Ipsum </a>
-              </li>
-              <li>
-                <a href=""> available, but the </a>
-              </li>
-              <li>
-                <a href=""> majority have </a>
-              </li>
-              <li>
-                <a href=""> suffered </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_form">
-            <h5>Newsletter</h5>
-            <form action="">
-              <input type="email" placeholder="Enter your email" />
-              <button>Subscribe</button>
-            </form>
-          </div>
-        </div>
-      </div>
+      <button class="btn btn-primary btn-lg btn-custom mr-2" onclick="window.location.href='index.html'" style="margin-top: -70px;margin-left: 30px; background-color: black; color: white;">Back</button>
     </div>
   </section>
+  
+  
+  <footer class="footer">
+    <p>
+        &copy; 2023 All Rights Reserved By On The Run
+    </p>
+</footer>
+    </div>
+</body>
   <!-- Credit card form -->
   <script>
-              function showPopup() {
-            alert("Your application has been sent to the bank.\nKindly wait for our response :D");
-          }
-      
-          function closePopup() {
-            window.location.href = "homepage.html";
-          }
+    function checkForm(event) {
+      event.preventDefault(); // Prevent the default behavior of the hyperlink
+      const firstName = document.getElementById("form6Example1").value;
+      const lastName = document.getElementById("form6Example2").value;
+      const birthDate = document.getElementById("form6Example3").value;
+      const phone = document.getElementById("form6Example6").value;
+      const address = document.getElementById("form6Example4").value;
+      const email = document.getElementById("form6Example5").value;
+      const nameOnCard = document.getElementById("nameOnCard").value;
+  
+      if (firstName && lastName && birthDate && phone && address && email && nameOnCard) {
+        alert("Your request has been sent to the bank, kindly wait for approval :D");
+        window.location.href = "credit_card_home.html";
+      } else {
+        alert("Please fill in all the required fields.");
+      }
+    }
 
   </script>
 
