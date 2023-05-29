@@ -33,16 +33,17 @@
     body {
       height: 100%;
     }
-    
+
     .wrapper {
       min-height: 100%;
       position: relative;
     }
-    
+
     .content {
-      padding-bottom: 200px; /* Adjust this value based on your footer's height */
+      padding-bottom: 60px;
+      /* Adjust this value based on your footer's height */
     }
-    
+
     .footer {
       background-color: black;
       color: #636363;
@@ -53,7 +54,7 @@
       width: 100%;
       padding: 20px 0;
     }
-      </style>
+  </style>
 
 </head>
 
@@ -177,55 +178,56 @@ style="padding-bottom: 20px"
       id="btn"
       style="padding-bottom: 20px"
     >
-      <button
-        class="btn btn-primary btn-lg btn-custom mr-2"
-        onclick="window.location.href='index.html'"
-        style="
-          background-color: black;
-          color: white;
-          border: 0px;
-          margin-top: 0 px;
-          margin-left: 30px;
-        "
-      >
-        Back
-      </button>
-    </div>
+    <button
+    class="btn btn-primary btn-lg btn-custom mr-2"
+    onclick="window.location.href='credit_card_home.html'"
+    style="
+      background-color: black;
+      color: white;
+      border: 0px;
+      margin-top: 0 px;
+      margin-left: 30px;
+    "
+  >
+    Back
+  </button>
 
   <!-- footer section -->
+
   <footer class="footer">
     <p>
-        &copy; 2023 All Rights Reserved By On The Run
+      &copy; 2023 All Rights Reserved By On The Run
     </p>
-</footer>
+  </footer>
 </div>
   <!-- footer section -->
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <!-- owl carousel script 
-    -->
-  <script type="text/javascript">
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 0,
-      navText: [],
-      center: true,
-      autoplay: true,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        1000: {
-          items: 3
-        }
-      }
-    });
-  </script>
-  <!-- end owl carousel script -->
+ 
 </body>
 
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+</script>
+<!-- owl carousel script 
+  -->
+<script type="text/javascript">
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 0,
+    navText: [],
+    center: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      1000: {
+        items: 3
+      }
+    }
+  });
+</script>
+<!-- end owl carousel script -->
 </html>
