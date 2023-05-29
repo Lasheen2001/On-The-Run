@@ -81,7 +81,7 @@
     <!-- how section -->
     <section class="how_section layout_padding">
       <div class="heading_container">
-        <h2>Bank Transfer</h2>
+        <h2>Phone Bill Payments</h2>
       </div>
     </section>
 
@@ -108,42 +108,12 @@
  -->
 
       <div class="heading_container">
-        <label for="accountType">Account Type:</label>
-        <select
-          id="accountType"
-          style="
-            border-radius: 10px;
-            border: 2px solid black;
-            margin-bottom: 10px;
-          "
-        >
-          <option value="internal">Internal</option>
-          <option value="domestic">Domestic</option>
-          <option value="international">International</option>
-        </select>
-      </div>
-
-      <div class="heading_container">
-        <label for="recipient">Recipient:</label>
-        <input
-          type="text"
-          id="recipient"
-          placeholder="Enter recipient"
-          style="
-            border-radius: 10px;
-            border: 2px solid black;
-            margin-bottom: 10px;
-          "
-        />
-      </div>
-
-      <div class="heading_container">
-        <label for="amount">Transfer Amount:</label>
+        <label for="amount">Payment Amount:</label>
         <input
           type="number"
           id="amount"
           step="0.01"
-          placeholder="Enter transfer amount"
+          placeholder="Payment amount"
           style="
             border-radius: 10px;
             border: 2px solid black;
@@ -159,10 +129,10 @@
     </div>
 
     <div id="transferStatus" class="heading_container">
-      <h3>Transfer Status</h3>
+      <h3>Payment Status</h3>
     </div>
 
-    <p id="transferMessage" style="text-align: center"></p>
+    <p id="paymentMessage" style="text-align: center"></p>
     <!-- end how section -->
 
     <div
@@ -172,7 +142,7 @@
     >
       <button
         class="btn btn-primary btn-lg btn-custom mr-2"
-        onclick="window.location.href='bank_accounts_home.html'"
+        onclick="window.location.href='bill_payments.html'"
         style="
           background-color: black;
           color: white;
@@ -229,32 +199,16 @@
       var balance = 100000;
       // Function to transfer money
       function transferMoney() {
-        const accountType = document.getElementById("accountType").value;
-        const recipient = document.getElementById("recipient").value;
         const amount = parseFloat(document.getElementById("amount").value);
         const balanceElement = document.getElementById("balance");
 
-        let transferMessage = "";
+        let paymentMessage = "";
 
-        if (amount <= 0 || amount > getBalance() || isNaN(amount)) {
-          transferMessage = "Invalid transfer amount.";
-        } else if (recipient.trim() === "") {
-          transferMessage = "Recipient field cannot be empty.";
-        } else {
-          transferMessage = `Transfer successful. $${amount.toFixed(
-            2
-          )} has been transferred to ${recipient}.`;
-
-          if (accountType === "internal") {
-            transferMessage += " (Internal)";
-          } else if (accountType === "domestic") {
-            transferMessage += " (Domestic)";
-          } else if (accountType === "international") {
-            transferMessage += " (International)";
-          }
-          document.getElementById("transferMessage").textContent =
-            transferMessage;
-          document.getElementById("transferMessage").style.color = "green";
+        if (amount <= balance) {
+          paymentMessage = `Payment successful. $${amount.toFixed(2)}`;
+          document.getElementById("paymentMessage").textContent =
+            paymentMessage;
+          document.getElementById("paymentMessage").style.color = "green";
           clearForm();
 
           changeBalance(amount);
@@ -263,15 +217,13 @@
           return;
         }
 
-        document.getElementById("transferMessage").textContent =
-          transferMessage;
-        document.getElementById("transferMessage").style.color = "red";
+        document.getElementById("paymentMessage").textContent =
+          "Insufficient funds";
+        document.getElementById("paymentMessage").style.color = "red";
       }
 
       // Function to clear the form after making a transfer
       function clearForm() {
-        document.getElementById("accountType").selectedIndex = 0;
-        document.getElementById("recipient").value = "";
         document.getElementById("amount").value = "";
       }
 

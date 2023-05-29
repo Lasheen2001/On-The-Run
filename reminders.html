@@ -43,47 +43,38 @@
       <!-- header section strats -->
       <header class="header_section">
         <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container">
-            <a class="navbar-brand" href="index.html">
-              <span> Bank X </span>
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="index.html">
+                    <span>
+                        Bank X
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <div
-                class="d-flex ml-auto flex-column flex-lg-row align-items-center"
-              >
-                <ul class="navbar-nav">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="index.html"
-                      >Home <span class="sr-only">(current)</span></a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="about.html"> Notifications </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="how.html"> Report an issue </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"> Logout</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                        <ul class="navbar-nav  ">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="notfications.html"> Notifications </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="issues.html"> Report an issue </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.html"> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
         </div>
-      </header>
+    </header>
       <!-- end header section -->
     </div>
 
@@ -102,8 +93,6 @@
           <option value="gas">Gas</option>
           <option value="telephone">Telephone</option>
           <option value="electricity">Electricity</option>
-          <option value="creditCard">Credit Card</option>
-          <option value="loan">Loan</option>
         </select>
       </div>
 
@@ -137,90 +126,27 @@
     <!-- end how section -->
 
     <!-- info section -->
-    <section class="info_section layout_padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="info_contact">
-              <div class="info_logo">
-                <a href="index.html">
-                  <span> Bank X </span>
-                </a>
-              </div>
-              <h5>Contact Us</h5>
-              <div>
-                <div class="img-box">
-                  <img src="images/location.png" width="18px" alt="" />
-                </div>
-                <p>Page when looking at its layou</p>
-              </div>
-              <div>
-                <div class="img-box">
-                  <img src="images/phone.png" width="18px" alt="" />
-                </div>
-                <p>+01 1234567890</p>
-              </div>
-              <div>
-                <div class="img-box">
-                  <img src="images/envelope.png" width="18px" alt="" />
-                </div>
-                <p>demo@gmail.com</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="info_info">
-              <h5>Invest Money</h5>
-              <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour,
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="info_links">
-              <h5>Useful Links</h5>
-              <ul>
-                <li>
-                  <a href=""> There are many </a>
-                </li>
-                <li>
-                  <a href=""> variations of </a>
-                </li>
-                <li>
-                  <a href=""> passages of </a>
-                </li>
-                <li>
-                  <a href=""> Lorem Ipsum </a>
-                </li>
-                <li>
-                  <a href=""> available, but the </a>
-                </li>
-                <li>
-                  <a href=""> majority have </a>
-                </li>
-                <li>
-                  <a href=""> suffered </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="info_form">
-              <h5>Newsletter</h5>
-              <form action="">
-                <input type="email" placeholder="Enter your email" />
-                <button>Subscribe</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- end info_section -->
+
+    <div
+      class="d-flex justify-content-start align-items-center mt-3"
+      id="btn"
+      style="padding-bottom: 20px"
+    >
+      <button
+        class="btn btn-primary btn-lg btn-custom mr-2"
+        onclick="window.location.href='notfications.html'"
+        style="
+          background-color: black;
+          color: white;
+          border: 0px;
+          margin-top: 0 px;
+          margin-left: 30px;
+        "
+      >
+        Back
+      </button>
+    </div>
 
     <!-- footer section -->
     <section class="container-fluid footer_section">
@@ -262,24 +188,18 @@
       const urlParams = new URLSearchParams(window.location.search);
 
       // Array to store reminders
-      const reminders = [];
-
-      const presetReminders = urlParams.get("reminders");
-
-      presetReminders.forEach(function (reminder) {
-        if (!containsReminder(reminder)) {
-          reminders.push(reminder);
-        }
-      });
-
-      function containsReminder(input) {
-        presetReminders.forEach(function (reminder) {
-          if (reminder === input) {
-            return false;
-          }
-        });
-        return true;
-      }
+      const reminders = [
+        {
+          paymentType: "creditCard",
+          dueDate: "2023-01-01",
+          reminderMessage: "pay card debt",
+        },
+        {
+          paymentType: "loan",
+          dueDate: "2023-01-15",
+          reminderMessage: "pay loans",
+        },
+      ];
 
       // Function to set a reminder
       function setReminder() {
@@ -319,17 +239,11 @@
       }
 
       function addReminder(value) {
-        const presetReminders = urlParams.get("reminders");
-
-        if (containsReminder(value)) {
-          document.getElementById("result").innerHTML =
-            "\<br>Reminder has already been set successfuly";
-          document.getElementById("result").style.color = "red";
-          return;
-        }
-
-        presetReminders.push(value);
-        urlParams.set("reminders", presetReminders);
+        document.getElementById("result").innerHTML =
+          "\<br>Reminder has already been set successfuly";
+        document.getElementById("result").style.color = "red";
+        reminders.push(value);
+        return;
       }
 
       // Function to display reminders
