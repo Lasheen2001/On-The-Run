@@ -39,6 +39,31 @@
     h2 {
       margin-bottom: 20px;
     }
+
+    body {
+      height: 100%;
+    }
+
+    .wrapper {
+      min-height: 100%;
+      position: relative;
+    }
+
+    .content {
+      padding-bottom: 60px;
+      /* Adjust this value based on your footer's height */
+    }
+
+      .footer {
+        background-color: black;
+        color: #636363;
+        text-align: center;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+      }
   </style>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -70,6 +95,7 @@
 
 <body>
   <!-- header section strats -->
+  <div class="wrapper">
   <header class="header_section">
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
@@ -163,8 +189,12 @@
     <div class="how_section layout_padding"></div>
   <!-- footer section -->
   <footer class="footer">
-    <p>&copy; 2023 All Rights Reserved By On The Run</p>
+    <p>
+      &copy; 2023 All Rights Reserved By On The Run
+    </p>
   </footer>
+</div>
+
   <!-- footer section -->
   <script>
     const urlParams = new URLSearchParams(window.location.search);
