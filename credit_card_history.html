@@ -8,18 +8,31 @@
     }
   </script>
   <style>
+    .heading_container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+  <style>
     .container {
       margin-top: 20px;
       margin-bottom: 20px;
     }
   </style>
   <style>
+    .heading_container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+
+  <style>
     .center {
       text-align: center;
     }
   </style>
   <style>
-    h1 {
+    h2 {
       margin-bottom: 20px;
     }
     
@@ -88,8 +101,8 @@
     </div>
   </header>
   <div class="center">
-    <div class="container">
-      <h1>Credit Card Transactions History</h1>
+    <div class="heading_container">
+      <h2>Credit Card Transactions</h2>
     </div>
     <div class="container">
       <table class="table table-striped-columns">
@@ -99,7 +112,6 @@
             <th scope="col">IBAN</th>
             <th scope="col">POS</th>
             <th scope="col">Date</th>
-            <th scope="col">Status</th>
             <th scope="col">Amount</th>
           </tr>
         </thead>
@@ -109,28 +121,28 @@
             <td>EG123456</td>
             <td>Zara</td>
             <td>25/4/2023</td>
-            <td>Not Paid</td>
+            <td>10000.00</td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>EG123456</td>
             <td>KFC</td>
             <td>31/3/2023</td>
-            <td>Not Paid</td>
+            <td>150.00</td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>EG123456</td>
             <td>Supermarket</td>
             <td>1/1/2023</td>
-            <td>Paid</td>
+            <td>200.00</td>
           </tr>
           <tr>
             <th scope="row">4</th>
             <td>EG123456</td>
             <td>Online Payment</td>
             <td>27/12/2022</td>
-            <td>Paid</td>
+            <td>5000.00</td>
           </tr>
         </tbody>
       </table>
@@ -151,8 +163,8 @@
           <span id="balance"></span>
         </div>
         <div>
-            <br>
-          <label for="paymentOption">Payment Option:   </label>
+          <br>
+          <label for="paymentOption">Payment Option: </label>
           <select id="paymentOption" onchange="togglePaymentAmountField()">
             <option value="partial">Partial Payment</option>
             <option value="full">Full Payment</option>
@@ -160,22 +172,26 @@
         </div>
         <div id="paymentAmountField">
           <label for="paymentAmount">Payment Amount:</label>
-          <input
-            type="number"
-            id="paymentAmount"
-            placeholder="Payment amount"
-          />
+          <input type="number" id="paymentAmount" placeholder="Payment amount" />
         </div>
         <section class="how_section layout_padding">
-        <div class="btn-box">
-          <a onclick="makePayment()" style="color:white";>Make Payment</a>
-        </div>
-        <p id="result"></p>
+          <div class="btn-box">
+            <a onclick="makePayment()" style="color:white" ;>Make Payment</a>
+          </div>
+          <p id="result"></p>
       </div>
-    </section></div>
+      </section>
+    </div>
     <!-- end how section -->
 
   </div>
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2023 All Rights Reserved By On The Run
+    </p>
+  </section>
+  <!-- footer section -->
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     // Function to retrieve the total amount from the URL query parameter
@@ -230,9 +246,9 @@
       const paymentAmountField =
         document.getElementById("paymentAmountField");
       if (paymentOption === "partial") {
-          paymentAmountField.style.display = "block";
+        paymentAmountField.style.display = "block";
       } else {
-          paymentAmountField.style.display = "none";
+        paymentAmountField.style.display = "none";
       }
     }
 
@@ -286,4 +302,5 @@
     setAll();
     togglePaymentAmountField();
   </script>
+
 </body>
