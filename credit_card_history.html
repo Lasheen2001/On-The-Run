@@ -65,7 +65,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>X Bank</title>
+  <title>Bank X</title>
 
   <!-- slider stylesheet -->
   <!-- slider stylesheet -->
@@ -87,37 +87,39 @@
   <!-- header section strats -->
   <header class="header_section">
     <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.html">
-          <span>
-            Bank X
-          </span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+                <span>
+                    Bank X
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-            <ul class="navbar-nav  ">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="about.html"> Notifications </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="how.html"> Report an issue </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"> Logout</a>
-              </li>
-            </ul>
-          </div>
-      </nav>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                    <ul class="navbar-nav  ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="notfications.html"> Notifications </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="issues.html"> Report an issue </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html"> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
     </div>
-  </header>
+</header>
+  <!-- header section ends -->
   <div class="center">
     <div class="heading_container">
       <h2>Credit Card Transactions</h2>
@@ -295,42 +297,80 @@
       </div>
       
     <!-- end how section -->
-
+    
   </div>
+    <div
+    class="d-flex justify-content-start align-items-center mt-3"
+    id="btn"
+    style="padding-bottom: 20px"
+  >
+    <button
+      class="btn btn-primary btn-lg btn-custom mr-2"
+      onclick="window.location.href='credit_card_home.html'"
+      style="
+        background-color: black;
+        color: white;
+        border:0px;
+        margin-top: 0 px;
+        margin-left: 30px;
+      "
+    >
+      Back
+    </button>
+  </div>
+    <div class="how_section layout_padding"></div>
   <!-- footer section -->
-  <section class="container-fluid footer_section">
-    <p>
-      &copy; 2023 All Rights Reserved By On The Run
-    </p>
-  </section>
+  <footer class="footer">
+    <p>&copy; 2023 All Rights Reserved By On The Run</p>
+  </footer>
   <!-- footer section -->
   <script>
     const urlParams = new URLSearchParams(window.location.search);
+    const containerIds = urlParams.get('containers');
+    var debt1 = 10000;
+    var debt2 = 20000;
+    var debt3 = 30000;
+    var balance = 100000;
+      
     // Function to retrieve the total amount from the URL query parameter
     function getTotalCardDebt() {
-      const totalAmount = urlParams.get("totalCardDebt");
-      return totalAmount ? parseFloat(totalAmount) : 0;
+      if (containerIds) {
+          if (containerIds === "container1,container1a") {
+            return debt1;
+          }
+          if (containerIds === "container2,container2a") {
+            return debt2;
+          }
+          return debt3;
+      }
     }
 
     // Function to retrieve the balance from the URL query parameter
     function getBalance() {
-      const totalAmount = urlParams.get("balance");
-      return totalAmount ? parseFloat(totalAmount) : 0;
+      return balance;
     }
 
     function changeAll(value) {
-      changeTotalCardDebt(value);
       changeBalance(value);
+      changeTotalCardDebt(value);
     }
 
     // Function to change the total amount from the URL query parameter
     function changeTotalCardDebt(value) {
-      urlParams.set("totalCardDebt", getTotalCardDebt() - value);
+      if (containerIds) {
+          if (containerIds === "container1,container1a") {
+             debt1 -= value;
+          }
+          if (containerIds === "container2,container2a") {
+             debt2 -= value;
+          }
+           debt3 -= value;
+      }
     }
 
     // Function to change the balance from the URL query parameter
     function changeBalance(value) {
-      urlParams.set("balance", getBalance() - value);
+      balance -= value;
     }
 
     function setAll() {
@@ -403,11 +443,8 @@
         (balance - paymentAmount).toFixed(2);
       document.getElementById("result").style.color = "green";
 
-      // changeAll(paymentAmount);
-      // setAll();
-      totalCardDebtElement.textContent =
-        "$" + (totalCardDebt - paymentAmount).toFixed(2);
-      balanceElement.textContent = "$" + (balance - paymentAmount).toFixed(2);
+      changeAll(paymentAmount);
+      setAll();
     }
 
     // Set the initial total amount and toggle the payment amount field visibility
