@@ -102,7 +102,7 @@
   color: #636363;
   text-align: center;
   position: absolute;
-  bottom: -110px;
+  bottom: 0px;
   left: 0;
   width: 100%;
   padding: 20px 0;
@@ -212,7 +212,7 @@
       </div>
     </div>
     <div class="d-flex justify-content-start align-items-center mt-3" id="btn" style="padding-bottom: 20px;">
-      <button class="btn btn-primary btn-lg btn-custom mr-2" onclick="window.location.href='loan_home.html'" style="margin-top: -70px;margin-left: 30px; background-color: black; color: white;">Back</button>
+      <button class="btn btn-primary btn-lg btn-custom mr-2" onclick="window.location.href='loan_home.html'" style="margin-top: -70px;margin-left: 30px; background-color: black; color: white; margin-bottom: -80px;">Back</button>
     </div>
   </section>
 
@@ -234,7 +234,7 @@
   
       if (accountNo && reason && amount) {
         alert("Your request has been sent to the bank, kindly wait for approval :D");
-        window.location.href = "credit_card_home.html";
+        window.location.href = "loan_home.html";
       } else {
         alert("Please fill in all the required fields.");
       }
