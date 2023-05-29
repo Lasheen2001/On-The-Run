@@ -36,9 +36,35 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
+    <style>
+      body {
+height: 100%;
+}
+
+.wrapper {
+min-height: 100%;
+position: relative;
+}
+
+.content {
+padding-bottom: 60px; /* Adjust this value based on your footer's height */
+}
+
+.footer {
+background-color: black;
+color: #636363;
+text-align: center;
+position: absolute;
+bottom: 0px;
+left: 0;
+width: 100%;
+padding: 20px 0;
+}
+</style>
   </head>
 
   <body>
+    <div class="wrapper">
     <div class="hero_area">
       <!-- header section strats -->
       <header class="header_section">
@@ -159,12 +185,12 @@
     <!-- end info_section -->
 
     <!-- footer section -->
-    <section class="container-fluid footer_section">
+    <footer class="footer">
       <p>
-        &copy; 2023 All Rights Reserved By On The Run
-        <!-- <a href="https://html.design/">Free Html Templates</a> -->
+          &copy; 2023 All Rights Reserved By On The Run
       </p>
-    </section>
+  </footer>
+      </div>
     <!-- footer section -->
 
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
