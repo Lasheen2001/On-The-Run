@@ -100,9 +100,32 @@
         <span id="balance"></span>
       </div>
 
+      <!-- <div class="heading_container" style="border-radius: 10px; border: 2px solid black; margin-bottom: 10px;">
+  <label for="accountType">Account Type:</label>
+  <select id="accountType" style="margin-top: 5px;"></select>
+</div>
+
+<div class="heading_container" style="border-radius: 10px; border: 2px solid black; margin-bottom: 10px;">
+  <label for="recipient">Recipient:</label>
+  <input type="text" id="recipient" placeholder="Enter recipient" style="margin-top: 5px;" />
+</div>
+
+<div class="heading_container" style="border-radius: 10px; border: 2px solid black; margin-bottom: 10px;">
+  <label for="amount">Transfer Amount:</label>
+  <input type="number" id="amount" step="0.01" placeholder="Enter transfer amount" style="margin-top: 5px;" />
+</div>
+ -->
+
       <div class="heading_container">
         <label for="accountType">Account Type:</label>
-        <select id="accountType">
+        <select
+          id="accountType"
+          style="
+            border-radius: 10px;
+            border: 2px solid black;
+            margin-bottom: 10px;
+          "
+        >
           <option value="internal">Internal</option>
           <option value="domestic">Domestic</option>
           <option value="international">International</option>
@@ -111,7 +134,16 @@
 
       <div class="heading_container">
         <label for="recipient">Recipient:</label>
-        <input type="text" id="recipient" placeholder="Enter recipient" />
+        <input
+          type="text"
+          id="recipient"
+          placeholder="Enter recipient"
+          style="
+            border-radius: 10px;
+            border: 2px solid black;
+            margin-bottom: 10px;
+          "
+        />
       </div>
 
       <div class="heading_container">
@@ -121,6 +153,11 @@
           id="amount"
           step="0.01"
           placeholder="Enter transfer amount"
+          style="
+            border-radius: 10px;
+            border: 2px solid black;
+            margin-bottom: 10px;
+          "
         />
       </div>
       <div class="how_section layout_padding">
@@ -134,100 +171,37 @@
       <h3>Transfer Status</h3>
     </div>
 
-    <p id="transferMessage"></p>
+    <p id="transferMessage" style="text-align: center"></p>
     <!-- end how section -->
 
+    <div
+      class="d-flex justify-content-start align-items-center mt-3"
+      id="btn"
+      style="padding-bottom: 20px"
+    >
+      <button
+        class="btn btn-primary btn-lg btn-custom mr-2"
+        onclick="window.location.href='bank_accounts_home.html'"
+        style="
+          background-color: black;
+          color: white;
+          border: 0px;
+          margin-top: 0 px;
+          margin-left: 30px;
+        "
+      >
+        Back
+      </button>
+    </div>
+
     <!-- info section -->
-    <section class="info_section layout_padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="info_contact">
-              <div class="info_logo">
-                <a href="index.html">
-                  <span> Bank X </span>
-                </a>
-              </div>
-              <h5>Contact Us</h5>
-              <div>
-                <div class="img-box">
-                  <img src="images/location.png" width="18px" alt="" />
-                </div>
-                <p>Page when looking at its layou</p>
-              </div>
-              <div>
-                <div class="img-box">
-                  <img src="images/phone.png" width="18px" alt="" />
-                </div>
-                <p>+01 1234567890</p>
-              </div>
-              <div>
-                <div class="img-box">
-                  <img src="images/envelope.png" width="18px" alt="" />
-                </div>
-                <p>demo@gmail.com</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="info_info">
-              <h5>Invest Money</h5>
-              <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour,
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="info_links">
-              <h5>Useful Links</h5>
-              <ul>
-                <li>
-                  <a href=""> There are many </a>
-                </li>
-                <li>
-                  <a href=""> variations of </a>
-                </li>
-                <li>
-                  <a href=""> passages of </a>
-                </li>
-                <li>
-                  <a href=""> Lorem Ipsum </a>
-                </li>
-                <li>
-                  <a href=""> available, but the </a>
-                </li>
-                <li>
-                  <a href=""> majority have </a>
-                </li>
-                <li>
-                  <a href=""> suffered </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="info_form">
-              <h5>Newsletter</h5>
-              <form action="">
-                <input type="email" placeholder="Enter your email" />
-                <button>Subscribe</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- end info_section -->
 
     <!-- footer section -->
     <section class="container-fluid footer_section">
       <p>
-        &copy; 2019 All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        &copy; 2023 All Rights Reserved By On The Run
+        <!-- <a href="https://html.design/">Free Html Templates</a> -->
       </p>
     </section>
     <!-- footer section -->
@@ -261,6 +235,7 @@
     <!-- end owl carousel script -->
     <script>
       const urlParams = new URLSearchParams(window.location.search);
+      var balance = 100000;
       // Function to transfer money
       function transferMoney() {
         const accountType = document.getElementById("accountType").value;
@@ -291,9 +266,8 @@
           document.getElementById("transferMessage").style.color = "green";
           clearForm();
 
-          // changeBalance(amount);
-          // setBalance();
-          balanceElement.textContent = "$" + (getBalance() - amount).toFixed(2);
+          changeBalance(amount);
+          setBalance();
 
           return;
         }
@@ -312,13 +286,12 @@
 
       // Function to retrieve the balance from the URL query parameter
       function getBalance() {
-        const totalAmount = urlParams.get("balance");
-        return totalAmount ? parseFloat(totalAmount) : 2000;
+        return balance;
       }
 
       // Function to change the balance from the URL query parameter
       function changeBalance(value) {
-        urlParams.set("balance", getBalance() - value);
+        balance -= value;
       }
 
       // Function to set the balance on the page
