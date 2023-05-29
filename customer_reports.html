@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Bank X</title>
+
+    <!-- slider stylesheet -->
+    <!-- slider stylesheet -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="index.html">
+              <span> Bank X </span>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div
+                class="d-flex ml-auto flex-column flex-lg-row align-items-center"
+              >
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="admin_home.html"
+                      >Home <span class="sr-only">(current)</span></a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html"> Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+    </div>
+
+    <!-- how section -->
+    <section class="how_section layout_padding" id="reminderHeader">
+      <div class="heading_container">
+        <h2>Customer Reports</h2>
+      </div>
+    </section>
+
+    <div id="reminderList">
+      <ul id="reminderItems"></ul>
+    </div>
+    <!-- end how section -->
+
+    <!-- info section -->
+    <!-- end info_section -->
+
+    <div
+      class="d-flex justify-content-start align-items-center mt-3"
+      id="btn"
+      style="padding-bottom: 20px"
+    >
+      <button
+        class="btn btn-primary btn-lg btn-custom mr-2"
+        onclick="window.location.href='admin_home.html'"
+        style="
+          background-color: black;
+          color: white;
+          border: 0px;
+          margin-top: 0 px;
+          margin-left: 30px;
+        "
+      >
+        Back
+      </button>
+    </div>
+
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+      <p>
+        &copy; 2019 All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </section>
+    <!-- footer section -->
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    ></script>
+    <!-- owl carousel script 
+    -->
+    <script type="text/javascript">
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 0,
+        navText: [],
+        center: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          1000: {
+            items: 3,
+          },
+        },
+      });
+    </script>
+    <!-- end owl carousel script -->
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+
+      // Array to store reminders
+      const reports = [
+        {
+          dueDate: "2023-01-01",
+          reminderMessage: "Non Technical issue in payment",
+        },
+        {
+          dueDate: "2023-01-15",
+          reminderMessage: "Non Technical issue in reminders",
+        },
+      ];
+
+      // Function to display reminders
+      function displayReports() {
+        const reminderItems = document.getElementById("reminderItems");
+        reminderItems.innerHTML = "";
+
+        reports.forEach(function (reminder, index) {
+          const listItem = document.createElement("li");
+          listItem.textContent = `Due Date: ${reminder.dueDate} | Reminder: ${reminder.reminderMessage}  `;
+
+          const reolveButton = document.createElement("button");
+          reolveButton.textContent = "Resolve";
+          reolveButton.classList.add("deleteButton");
+          reolveButton.addEventListener("click", function () {
+            deleteReminder(index);
+          });
+
+          // Set the color of the delete button to green
+          reolveButton.style.backgroundColor = "green";
+          reolveButton.style.marginBottom = "2px";
+          listItem.appendChild(reolveButton);
+
+          reminderItems.appendChild(listItem);
+        });
+      }
+
+      // Function to delete a reminder
+      function deleteReminder(index) {
+        reports.splice(index, 1);
+        displayReports();
+      }
+
+      displayReports();
+    </script>
+  </body>
+</html>
