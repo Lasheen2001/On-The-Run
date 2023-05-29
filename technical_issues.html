@@ -82,10 +82,35 @@
     margin-right: auto;
     margin-left: auto;
   }
+
+  body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.content {
+  padding-bottom: 60px; /* Adjust this value based on your footer's height */
+}
+
+.footer {
+  background-color: black;
+  color: #636363;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+}
   </style>
 </head>
 
 <body>
+  <div class="wrapper">
   <div>
     <!-- header section strats -->
     <header class="header_section">
@@ -184,9 +209,10 @@
    
     
   </div>
-  <section class="container-fluid footer_section">
+  <footer class="footer">
     <p>
-      &copy; 2023 All Rights Reserved By On The Run
+        &copy; 2023 All Rights Reserved By On The Run
     </p>
-  </section>
+</footer>
+    </div>
 </body>
