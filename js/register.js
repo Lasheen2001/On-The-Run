@@ -4,6 +4,10 @@ function checkSimilarity() {
   var email = document.getElementById("email").value;
   var str = localStorage.getItem("key");
   var elements = JSON.parse(str);
+  if (!email || !password){
+    alert("Please Fill all fields");
+    return;
+  }
   if (localStorage.getItem("key") === null) {
     addUser();
     window.location.href = "login.html";
