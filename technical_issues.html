@@ -28,7 +28,61 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+    #form{
+        border: solid rgb(144, 141, 141);
+        background-color: rgb(235, 226, 226);
+    }
+    .image{
+        justify-content: right;
+        align-items: end;
+    }
+
+    .overlay {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.5);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              z-index: 9999;
+            }
   
+  .popup {
+              background-color: #ffffff;
+              padding: 20px;
+              border-radius: 5px;
+              text-align: center;
+    }
+    #box{
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        
+    }
+    #form{
+        background-color: transparent;
+        border: white;
+    }
+
+    .btn-custom {
+    padding: 12px 30px;
+    font-size: 18px;
+  }
+  body {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+  
+  section {
+    padding-right: 15px; /* Add padding to the right to prevent horizontal overflow */
+    padding-left: 15px; /* Add padding to the left to prevent horizontal overflow */
+    margin-right: auto;
+    margin-left: auto;
+  }
+  </style>
 </head>
 
 <body>
@@ -57,6 +111,9 @@
                   <a class="nav-link" href="about.html"> Notifications </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="issues.html"> Report an issue </a>
+                  </li>
+                <li class="nav-item">
                   <a class="nav-link" href="login.html"> Logout</a>
                 </li>
               </ul>
@@ -67,16 +124,69 @@
     </header>
     <div>
         <section class="how_section layout_padding">
-          <div class="heading_container">
-            <h2>
-              Report a Technical Issue
-            </h2>
-          </div>
-<br><br>
-     <div style="padding-left: 5rem;">
-         <h5  for="inputField">Please specify your issue in details.</h5>
-            <br>
-        <input style="height: 2in; width:80%;" type="text" id="inputField">
-     </div>
+
+            <form>
+                <section>
+                    <div class="row" id="box">
+                      <div class="col-md-8 mb-4" id="lol">
+                        <div class="card mb-4"id="form">
+                            <div class="heading_container" style="margin-top: 20px; margin-bottom: 20px;">
+                                <h2>Technical Issue Report </h2>
+                              </div>
+                          <div class="card-body">
+                            <form>
+                              <!-- 2 column grid layout with text inputs for the first and last names -->
+                              <div class="form-outline" style="margin-bottom: 20px;">
+                                <label  class="form-label" for="form6Example4">Full Name</label>
+                                <input type="text" id="name" class="form-control"  style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
+                              </div>
+                              <div class="form-outline" style="margin-bottom: 20px;">
+                                <label class="form-label" for="form6Example4">Email</label>
+                                <input type="email" id="email" class="form-control"  style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
+                              </div>
+                                <br>
+                            <label for="dropdown">Please explain in more details the technical issue</label>
+                            <div class="form-outline" style="margin-bottom: 20px;">
+                                <textarea id="issue" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;">
+                    
+                                </textarea>
+                            </div>
+                                <div class="d-flex justify-content-center mt-4" id="btn">
+                                    <button onclick="submitForm()" class="btn btn-primary btn-lg btn-custom bg-dark text-white">
+                                      Apply
+                                    </a>
+                                    </button>
+                               
+                                  </div>
+                         
+                    
+                                
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                 </form>
+        <script>
+          function submitForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var issue = document.getElementById("issue").value;
+            if (name === "" || email === "" || issue === "") {
+              alert("Please fill out all fields.");
+            } else {
+              alert("Thank you for reporting the issue. Our technical support team will look into it.");
+              // send form data to server using AJAX or other means
+            }
+          }
+          </script>
+   
     
   </div>
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2023 All Rights Reserved By On The Run
+    </p>
+  </section>
+</body>
