@@ -65,50 +65,61 @@
         </nav>
       </div>
     </header>
-    <div>
-        <section class="how_section layout_padding">
-          <div class="heading_container">
-            <h2>
-              Report a Technical Issue
-            </h2>
-          </div>
+<div>
+    <section class="how_section layout_padding">
+      <div class="heading_container">
+        <h2>
+          Applying for a new Credit Card
+        </h2>
+      </div>
 <br><br>
-     <div style="padding-left: 5rem;">
-        <h5>Please fill out the following form to report a technical issue in the bank system:</h5>
-        <br>
-        <br>
-        <form>
-          <label for="name">Name:</label>
-          <br>
-          <input style="width: 50%;" type="text" id="name" name="name"><br><br>
-          <label for="email">Email:</label>
-          <br>
-          <input style="width: 50%;" type="email" id="email" name="email"><br><br>
-          <label for="issue">Issue:</label>
-          <br>
-          <textarea style="width: 70%;" id="issue" name="issue"></textarea><br><br>
-          <button onclick="submitForm()">Submit</button>
-        </form> 
-     </div>
-        <script>
-          function submitForm() {
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var issue = document.getElementById("issue").value;
-            if (name === "" || email === "" || issue === "") {
-              alert("Please fill out all fields.");
-            } else {
-              alert("Thank you for reporting the issue. Our technical support team will look into it.");
-              // send form data to server using AJAX or other means
-            }
-          }
-          </script>
-   
-    
-  </div>
-  <section class="container-fluid footer_section">
-    <p>
-      &copy; 2023 All Rights Reserved By On The Run
-    </p>
-  </section>
+ <div style="padding-left: 5rem;">
+    <h5>Please fill out the following form to apply for a new Credit Card:</h5>
+    <br>
+    <br>
+    <form>
+      <label for="name">Name:</label>
+      <br>
+      <input style="width: 50%;" type="text" id="name" name="name"><br><br>
+      <label for="email">Email:</label>
+      <br>
+      <input style="width: 50%;" type="email" id="email" name="email"><br><br>
+      <label for="email">Old Card number:</label>
+      <br>
+      <input style="width: 50%;" type="number" id="number" name="email"><br><br>
+      <label for="dropdown">Reason for applying</label>
+        <select style="width: 50%;" id="dropdown" name="dropdown">
+        <option value="option1">Stolen Credit Card</option>
+        <option value="option2">Expired Credit Card and want to replace</option>
+        <option value="option3">Credit Card lost/damaged</option>
+        <option value="option3">Other</option>
+        </select>
+        <br><br>
+        <label for="dropdown">Please specify in details</details></label><br>
+      <textarea style="width: 70%;" id="issue" name="issue"></textarea><br><br>
+      <button onclick="submitForm()">Submit</button>
+    </form> 
+ </div>
+    <script>
+      function submitForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var number = document.getElementById("number").value;
+        if (name === "" || email === "" || number === "") {
+          alert("Please fill out all fields.");
+        } else {
+          alert("Thank you, we will deliver your Credit Card as soon as possible");
+          // send form data to server using AJAX or other means
+        }
+      }
+      </script>
+
+
+</div>
+<section class="container-fluid footer_section">
+<p>
+  &copy; 2023 All Rights Reserved By On The Run
+</p>
+</section>
+</div>
 </body>

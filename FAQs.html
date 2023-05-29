@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Cryptop</title>
+  <title>Bank X</title>
 
   <!-- slider stylesheet -->
   <!-- slider stylesheet -->
@@ -28,18 +28,17 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
-  
 </head>
 
 <body>
-  <div>
+  <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Cryptop
+              Bank X
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -54,7 +53,10 @@
                   <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="about.html"> Notifications </a>
+                  <a class="nav-link" href="notfications.html"> Notifications </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="issues.html"> Report an issue </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="login.html"> Logout</a>
@@ -65,50 +67,8 @@
         </nav>
       </div>
     </header>
-    <div>
-        <section class="how_section layout_padding">
-          <div class="heading_container">
-            <h2>
-              Report a Technical Issue
-            </h2>
-          </div>
-<br><br>
-     <div style="padding-left: 5rem;">
-        <h5>Please fill out the following form to report a technical issue in the bank system:</h5>
-        <br>
-        <br>
-        <form>
-          <label for="name">Name:</label>
-          <br>
-          <input style="width: 50%;" type="text" id="name" name="name"><br><br>
-          <label for="email">Email:</label>
-          <br>
-          <input style="width: 50%;" type="email" id="email" name="email"><br><br>
-          <label for="issue">Issue:</label>
-          <br>
-          <textarea style="width: 70%;" id="issue" name="issue"></textarea><br><br>
-          <button onclick="submitForm()">Submit</button>
-        </form> 
-     </div>
-        <script>
-          function submitForm() {
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var issue = document.getElementById("issue").value;
-            if (name === "" || email === "" || issue === "") {
-              alert("Please fill out all fields.");
-            } else {
-              alert("Thank you for reporting the issue. Our technical support team will look into it.");
-              // send form data to server using AJAX or other means
-            }
-          }
-          </script>
-   
-    
+    <!-- end header section -->
+    <!-- slider section -->
+
+    <!-- end slider section -->
   </div>
-  <section class="container-fluid footer_section">
-    <p>
-      &copy; 2023 All Rights Reserved By On The Run
-    </p>
-  </section>
-</body>
