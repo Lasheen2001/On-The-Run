@@ -102,7 +102,7 @@
   color: #636363;
   text-align: center;
   position: absolute;
-  bottom: -110px;
+  bottom: 0px;
   left: 0;
   width: 100%;
   padding: 20px 0;
@@ -167,12 +167,12 @@
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="form-outline mb-4">
                 <label class="form-label" for="form6Example5">Account Number</label>
-                <input type="email" id="form6Example5" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
+                <input type="email" id="AccountNo" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
               </div>
 
               <div class="form-outline mb-4">
                 <label class="form-label" for="form6Example5">Requested Amount</label>
-                <input type="email" id="form6Example5" class="form-control" placeholder="$150000" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
+                <input type="email" id="ReqAmount" class="form-control" placeholder="$150000" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
               </div>
   
   
@@ -198,7 +198,7 @@
 
               <div class="form-outline mb-4">
                 <label class="form-label" for="form6Example5">Reason For Loan</label>
-                <input type="email" id="form6Example5" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
+                <input type="email" id="Reason" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
               </div>
 
               <hr class="my-4" />
@@ -212,7 +212,7 @@
       </div>
     </div>
     <div class="d-flex justify-content-start align-items-center mt-3" id="btn" style="padding-bottom: 20px;">
-      <button class="btn btn-primary btn-lg btn-custom mr-2" onclick="window.location.href='loan_home.html'" style="margin-top: -70px;margin-left: 30px; background-color: black; color: white;">Back</button>
+      <button class="btn btn-primary btn-lg btn-custom mr-2" onclick="window.location.href='loan_home.html'" style="margin-top: -70px;margin-left: 30px; background-color: black; color: white; margin-bottom: -80px;">Back</button>
     </div>
   </section>
 
@@ -227,17 +227,14 @@
   <script>
     function checkForm(event) {
       event.preventDefault(); // Prevent the default behavior of the hyperlink
-      const firstName = document.getElementById("form6Example1").value;
-      const lastName = document.getElementById("form6Example2").value;
-      const birthDate = document.getElementById("form6Example3").value;
-      const phone = document.getElementById("form6Example6").value;
-      const address = document.getElementById("form6Example4").value;
-      const email = document.getElementById("form6Example5").value;
-      const nameOnCard = document.getElementById("nameOnCard").value;
+      const accountNo = document.getElementById("AccountNo").value;
+      const reason = document.getElementById("Reason").value;
+      const amount = document.getElementById("ReqAmount").value;
+
   
-      if (firstName && lastName && birthDate && phone && address && email && nameOnCard) {
+      if (accountNo && reason && amount) {
         alert("Your request has been sent to the bank, kindly wait for approval :D");
-        window.location.href = "credit_card_home.html";
+        window.location.href = "loan_home.html";
       } else {
         alert("Please fill in all the required fields.");
       }

@@ -2,16 +2,31 @@
 <html>
 
 <head>
-  <!-- <script>
-    function redirectToPage() {
-      window.location.href = "creditCardPayment.html";
-    }
-  </script> -->
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      // Retrieve the containers from the query parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const containerIds = urlParams.get('containers');
+      
+      if (containerIds) {
+        const idsArray = containerIds.split(',');
+        
+        // Show the targeted containers
+        idsArray.forEach((id) => {
+          const container = document.getElementById(id);
+          if (container) {
+            container.style.display = "block";
+          }
+        });
+      }
+    });
+  </script>
 
   <style>
     .container {
       margin-top: 20px;
       margin-bottom: 20px;
+      display: none;
     }
   </style>
   <style>
@@ -71,7 +86,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
             <ul class="navbar-nav  ">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item ">
@@ -81,7 +96,7 @@
                 <a class="nav-link" href="how.html"> Report an issue </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"> Logout</a>
+                <a class="nav-link" href="login.html"> Logout</a>
               </li>
             </ul>
           </div>
@@ -92,55 +107,118 @@
     <div class="heading_container">
       <h2>Transaction History</h2>
     </div>
-    <div class="container">
-      <table class="table table-striped-columns">
-        <thead>
-          <tr>
-            <th scope="col">Transaction Number</th>
-            <th scope="col">IBAN</th>
-            <th scope="col">POS</th>
-            <th scope="col">Date</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>EG123456</td>
-            <td>Zara</td>
-            <td>25/4/2023</td>
-            <td>Pending</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>EG123456</td>
-            <td>KFC</td>
-            <td>31/3/2023</td>
-            <td>Pending</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>EG123456</td>
-            <td>Supermarket</td>
-            <td>1/1/2023</td>
-            <td>Paid</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>EG123456</td>
-            <td>Online Payment</td>
-            <td>27/12/2022</td>
-            <td>Paid</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <div id="container1" class="container">
+        <table class="table table-striped-columns">
+          <thead>
+            <tr>
+              <th scope="col">Transaction Number</th>
+              <th scope="col">IBAN</th>
+              <th scope="col">POS</th>
+              <th scope="col">Date</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>EG123456</td>
+              <td>Zara</td>
+              <td>25/4/2023</td>
+              <td>EGP 10000.00</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>EG123456</td>
+              <td>KFC</td>
+              <td>31/3/2023</td>
+              <td>EGP 150.00</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>EG123456</td>
+              <td>Supermarket</td>
+              <td>1/1/2023</td>
+              <td>EGP 200.00</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>EG123456</td>
+              <td>Online Payment</td>
+              <td>27/12/2022</td>
+              <td>EGP 5000.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="container2" class="container">
+        <table class="table table-striped-columns">
+          <thead>
+            <tr>
+              <th scope="col">Transaction Number</th>
+              <th scope="col">IBAN</th>
+              <th scope="col">POS</th>
+              <th scope="col">Date</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>EG123456</td>
+              <td>Zara</td>
+              <td>25/4/2023</td>
+              <td>USD 10000.00</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>EG123456</td>
+              <td>KFC</td>
+              <td>31/3/2023</td>
+              <td>USD 150.00</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>EG123456</td>
+              <td>Supermarket</td>
+              <td>1/1/2023</td>
+              <td>USD 200.00</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>EG123456</td>
+              <td>Online Payment</td>
+              <td>27/12/2022</td>
+              <td>USD 5000.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
   </div>
+</div>
+<div
+class="d-flex justify-content-start align-items-center mt-3"
+id="btn"
+style="padding-bottom: 20px"
+>
+<button
+  class="btn btn-primary btn-lg btn-custom mr-2"
+  onclick="window.location.href='bank_accounts_home.html'"
+  style="
+    background-color: black;
+    color: white;
+    border:0px;
+    margin-top: 0 px;
+    margin-left: 30px;
+  "
+>
+  Back
+</button>
+</div>
     <!-- footer section -->
-    <section class="container-fluid footer_section">
+    <footer class="footer">
       <p>
-        &copy; 2023 All Rights Reserved By On The Run
+          &copy; 2023 All Rights Reserved By On The Run
       </p>
-    </section>
+  </footer>
     <!-- footer section -->
 </body>

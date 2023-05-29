@@ -3,10 +3,6 @@
 
 <head>
   <script>
-    function redirectToPage() {
-      window.location.href = "creditCardPayment.html";
-    }
-
     window.addEventListener('DOMContentLoaded', (event) => {
       // Retrieve the containers from the query parameter
       const urlParams = new URLSearchParams(window.location.search);
@@ -262,15 +258,15 @@
       <div>
         <div id="container1a" class="container">
           <label for="totalCardDebt">Total Card 1 Debt:</label>
-          <span id="totalCardDebt"></span>
+          <span id="totalCardDebt1"></span>
         </div>
         <div id="container2a" class="container">
           <label for="totalCardDebt">Total Card 2 Debt:</label>
-          <span id="totalCardDebt"></span>
+          <span id="totalCardDebt2"></span>
         </div>
         <div id="container3a" class="container">
           <label for="totalCardDebt">Total Card 3 Debt:</label>
-          <span id="totalCardDebt"></span>
+          <span id="totalCardDebt3"></span>
         </div>
         <div>
           <label for="balance">Balance:</label>
@@ -318,7 +314,6 @@
       Back
     </button>
   </div>
-    <div class="how_section layout_padding"></div>
   <!-- footer section -->
   <footer class="footer">
     <p>&copy; 2023 All Rights Reserved By On The Run</p>
@@ -331,17 +326,28 @@
     var debt2 = 20000;
     var debt3 = 30000;
     var balance = 100000;
+    var cc;
+    if (containerIds) {
+          if (containerIds === "container1,container1a") {
+            cc = 1;
+          }else
+          if (containerIds === "container2,container2a") {
+            cc = 2;
+          }else {
+          cc = 3;
+          }
+      }
       
     // Function to retrieve the total amount from the URL query parameter
     function getTotalCardDebt() {
       if (containerIds) {
           if (containerIds === "container1,container1a") {
             return debt1;
-          }
-          if (containerIds === "container2,container2a") {
+          }else if (containerIds === "container2,container2a") {
             return debt2;
-          }
+          }else{
           return debt3;
+          }
       }
     }
 
@@ -380,7 +386,7 @@
 
     // Function to set the total amount on the page
     function setTotalCardDebt() {
-      const totalAmountElement = document.getElementById("totalCardDebt");
+      const totalAmountElement = document.getElementById("totalCardDebt" + cc);
       const totalAmount = getTotalCardDebt();
       totalAmountElement.textContent = "$" + totalAmount.toFixed(2);
     }
@@ -406,7 +412,7 @@
 
     // Function to make the payment
     function makePayment() {
-      const totalCardDebtElement = document.getElementById("totalCardDebt");
+      const totalCardDebtElement = document.getElementById("totalCardDebt" + cc);
       const totalCardDebt = getTotalCardDebt();
       const balanceElement = document.getElementById("balance");
       const balance = getBalance();
