@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pop-up Example</title>
+    <style>
+        /* Style the pop-up */
+        .popup {
+            width: 200px;
+            height: 100px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Website Content</h1>
+    
+    <div id="popup" class="popup">
+        <p>This is a pop-up message!</p>
+    </div>
+
+    <script>
+        // Function to display the pop-up
+        function displayPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }
+
+        // Delay in milliseconds (e.g., 5000 milliseconds = 5 seconds)
+        var delayInMilliseconds = 5000;
+
+        // Set the timeout to display the pop-up after the specified delay
+        setTimeout(displayPopup, delayInMilliseconds);
+    </script>
+</body>
+</html>
