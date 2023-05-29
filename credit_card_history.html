@@ -295,8 +295,12 @@
       </div>
       
     <!-- end how section -->
-
+    
   </div>
+  <div class="d-flex justify-content-start align-items-center mt-3" id="btn" style="padding-bottom: 20px;">
+      <button class="btn btn-primary btn-lg btn-custom bg-dark text-white mr-2" onclick="window.location.href='credit_card_home.html'" style="margin-top: 0 px;margin-left: 30px;">Back</button>
+    </div>
+    <div class="how_section layout_padding"></div>
   <!-- footer section -->
   <footer class="footer">
     <p>&copy; 2023 All Rights Reserved By On The Run</p>
@@ -304,31 +308,51 @@
   <!-- footer section -->
   <script>
     const urlParams = new URLSearchParams(window.location.search);
+    const containerIds = urlParams.get('containers');
+    var debt1 = 10000;
+    var debt2 = 20000;
+    var debt3 = 30000;
+    var balance = 100000;
+      
     // Function to retrieve the total amount from the URL query parameter
     function getTotalCardDebt() {
-      const totalAmount = urlParams.get("totalCardDebt");
-      return totalAmount ? parseFloat(totalAmount) : 0;
+      if (containerIds) {
+          if (containerIds === "container1,container1a") {
+            return debt1;
+          }
+          if (containerIds === "container2,container2a") {
+            return debt2;
+          }
+          return debt3;
+      }
     }
 
     // Function to retrieve the balance from the URL query parameter
     function getBalance() {
-      const totalAmount = urlParams.get("balance");
-      return totalAmount ? parseFloat(totalAmount) : 0;
+      return balance;
     }
 
     function changeAll(value) {
-      changeTotalCardDebt(value);
       changeBalance(value);
+      changeTotalCardDebt(value);
     }
 
     // Function to change the total amount from the URL query parameter
     function changeTotalCardDebt(value) {
-      urlParams.set("totalCardDebt", getTotalCardDebt() - value);
+      if (containerIds) {
+          if (containerIds === "container1,container1a") {
+             debt1 -= value;
+          }
+          if (containerIds === "container2,container2a") {
+             debt2 -= value;
+          }
+           debt3 -= value;
+      }
     }
 
     // Function to change the balance from the URL query parameter
     function changeBalance(value) {
-      urlParams.set("balance", getBalance() - value);
+      balance -= value;
     }
 
     function setAll() {
@@ -401,11 +425,8 @@
         (balance - paymentAmount).toFixed(2);
       document.getElementById("result").style.color = "green";
 
-      // changeAll(paymentAmount);
-      // setAll();
-      totalCardDebtElement.textContent =
-        "$" + (totalCardDebt - paymentAmount).toFixed(2);
-      balanceElement.textContent = "$" + (balance - paymentAmount).toFixed(2);
+      changeAll(paymentAmount);
+      setAll();
     }
 
     // Set the initial total amount and toggle the payment amount field visibility
