@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="points_system.js"></script>
+    <style>
+        .heading_container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .warning {
+            color: red;
+        }
+
+        .container {
+            margin-top: 20px;
+            margin-bottom: 20 px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>X Bank</title>
+
+    <!-- slider stylesheet -->
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- header section strats -->
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="index.html">
+                    <span>
+                        Bank X
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                        <ul class="navbar-nav  ">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="about.html"> Notifications </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="how.html"> Report an issue </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
+        </div>
+    </header>
+    <div class="center">
+        <div class="heading_container">
+            <h2>Points System</h2>
+        </div>
+        <div id="points">
+            <p>Your current points: <span id="currentPoints">50000</span></p>
+            <p>Enter the number of points to swap (must be a multiple of 10000):</p>
+            <div id="Point to Exchange field">
+                <label for="pointsInput">Points to Exchange: </label>
+                <input type="number" id="pointsInput" min="10000" step="10000">
+            </div>
+            <section class="how_section layout_padding">
+                <div class="btn-box">
+                    <a onclick="swapPoints()" style="color:white" ;>Swap Points</a>
+                </div>
+            </section>
+            <p id="warning" class="warning"></p>
+            <p>Cash back amount: <span id="cashBackAmount">0</span></p>
+            <section class="how_section layout_padding">
+                <div class="btn-box">
+                    <a onclick="confirmRedirect()" style="color:white" ;>Confirm</a>
+                </div>
+            </section>
+        </div>
+
+
+
+
+    </div>
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+        <p>
+            &copy; 2023 All Rights Reserved By On The Run
+        </p>
+    </section>
+    <!-- footer section -->
+</body>
