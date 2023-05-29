@@ -102,7 +102,7 @@
   color: #636363;
   text-align: center;
   position: absolute;
-  bottom: -210px;
+  bottom: -110px;
   left: 0;
   width: 100%;
   padding: 20px 0;
@@ -154,88 +154,95 @@
 
     <!-- end slider section -->
   </div>
+  <!-- Credit card form -->
   <section>
     <div class="row" id="box">
       <div class="col-md-8 mb-4" id="lol">
         <div class="card mb-4"id="form">
-            <div class="heading_container" style="margin-top: 20px; margin-bottom: 20px;">
-                <h2>Closing Bank Account</h2>
-              </div>
+          <div class="heading_container" style="margin-top: 20px; margin-bottom: 20px;">
+            <h2>Loan Application</h2>
+          </div>
           <div class="card-body">
             <form>
               <!-- 2 column grid layout with text inputs for the first and last names -->
-              <div class="row mb-4">
-                <div class="col">
-                  <div class="form-outline">
-                    <label class="form-label" for="form6Example1">Account number</label>
-                    <input type="number" id="AccountNumber" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
-                  </div>
-                </div>
-                
-                <div class="col">
-                  <div class="form-outline">
-                    <label class="form-label" for="form6Example2">Phone Number</label>
-                    <input type="number" id="Phone" class="form-control"style="border: solid rgb(174, 170, 170) ;background-color: lightgray;" placeholder="20XXXXXXXXXX"/>
-                  </div>
-                </div>
-              </div>
-              
-
-              <!-- Text input -->
-              
-              <!-- Text input -->
-              <div class="form-outline" style="margin-bottom: 20px;">
-                <label class="form-label" for="form6Example4">Reason For Closing The Bank Account</label>
-                <input type="text" id="Reason" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form6Example5">Account Number</label>
+                <input type="email" id="form6Example5" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
               </div>
 
-              <div class="form-outline" style="margin-bottom: 20px;">
-                <label class="form-label" for="form6Example4">Account Password</label>
-                <input type="password" id="Pass" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form6Example5">Requested Amount</label>
+                <input type="email" id="form6Example5" class="form-control" placeholder="$150000" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
               </div>
   
-              <hr class="my-4" />
-              
+  
+              <!-- Text input -->
+              <div class="form-row" style="margin-bottom: 25px;">
+                <div class="col-md-6">
+                  <label for="loan-type">Select Loan Type:</label>
+                  <select id="loan-type" name="loan-type" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" >
+                    <option value="personal-loan">Personal Loan</option>
+                    <option value="car-loan">Car Loan</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="payment-type">Select Payment Type:</label>
+                  <select id="payment-type" name="payment-type" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" >
+                    <option value="monthly-payment">Monthly Payment</option>
+                    <option value="quarterly-payment">Quarterly Payment</option>
+                    <option value="semi-annual-payment">Semi-Annual Payment</option>
+                    <option value="annual-payment">Annual Payment</option>
+                  </select>
+                </div>
+              </div>
 
-            
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form6Example5">Reason For Loan</label>
+                <input type="email" id="form6Example5" class="form-control" style="border: solid rgb(174, 170, 170); background-color: lightgray;" />
+              </div>
+
+              <hr class="my-4" />
+  
               <div class="d-flex justify-content-center mt-4" id="btn">
                 <a href="credit_card_home.html" class="btn btn-primary btn-lg btn-custom" onclick="checkForm(event)" style="background-color: black; color: white;">Apply</a>
               </div>
-            
             </form>
-            
           </div>
         </div>
       </div>
     </div>
-    
     <div class="d-flex justify-content-start align-items-center mt-3" id="btn" style="padding-bottom: 20px;">
-      <button class="btn btn-primary btn-lg btn-custom mr-2" onclick="window.location.href='index.html'" style="margin-top: -70px; margin-bottom: -270px ;margin-left: 30px; background-color: black; color: white;">Back</button>
+      <button class="btn btn-primary btn-lg btn-custom mr-2" onclick="window.location.href='index.html'" style="margin-top: -70px;margin-left: 30px; background-color: black; color: white;">Back</button>
     </div>
-
   </section>
+
   <footer class="footer">
     <p>
         &copy; 2023 All Rights Reserved By On The Run
     </p>
 </footer>
-        </div>
+    </div>
 </body>
-
+  <!-- Credit card form -->
   <script>
     function checkForm(event) {
       event.preventDefault(); // Prevent the default behavior of the hyperlink
-      const accountnumber = document.getElementById("AccountNumber").value;
-      const phone = document.getElementById("Phone").value;
-      const reason = document.getElementById("Reason").value;
-      const pass = document.getElementById("Pass").value;
-
+      const firstName = document.getElementById("form6Example1").value;
+      const lastName = document.getElementById("form6Example2").value;
+      const birthDate = document.getElementById("form6Example3").value;
+      const phone = document.getElementById("form6Example6").value;
+      const address = document.getElementById("form6Example4").value;
+      const email = document.getElementById("form6Example5").value;
+      const nameOnCard = document.getElementById("nameOnCard").value;
   
-      if (accountnumber && phone && reason && pass) {
-        window.location.href = "bank_accounts_home.html";
+      if (firstName && lastName && birthDate && phone && address && email && nameOnCard) {
+        alert("Your request has been sent to the bank, kindly wait for approval :D");
+        window.location.href = "credit_card_home.html";
       } else {
         alert("Please fill in all the required fields.");
       }
     }
-    
+
   </script>
+
+
