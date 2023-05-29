@@ -78,9 +78,9 @@ function checkExist(){
         }
         else{
           if(type === 'banker')
-          window.location.href='banker_account.html';
+          window.open('banker_home.html');
           else
-          window.location.href='admin_account.html';
+          window.open('admin_home.html');
         }
       }
       else{
