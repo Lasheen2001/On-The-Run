@@ -4,6 +4,14 @@
 <head>
     <script src="points_system.js"></script>
     <style>
+        .btn-full-width {
+            text-align: left;
+            background-color: white;
+            width: 100%;
+            margin-top: 5px;
+
+        }
+
         .heading_container {
             margin-top: 20px;
             margin-bottom: 20px;
@@ -73,58 +81,32 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
                         <ul class="navbar-nav  ">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="about.html"> Notifications </a>
+                            <li class="nav-item active">
+                                <a class="nav-link active" href="notfications.html"> Notifications </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="how.html"> Report an issue </a>
+                                <a class="nav-link" href="issues.html"> Report an issue </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"> Logout</a>
+                                <a class="nav-link" href="login.html"> Logout</a>
                             </li>
                         </ul>
                     </div>
             </nav>
         </div>
     </header>
-    <div class="center">
-        <div class="heading_container">
-            <h2>Points System</h2>
-        </div>
-        <div id="points">
-            <p>Your current points: <span id="currentPoints">50000</span></p>
-            <p>You can now redeem your points for cashback
-                <br>For every 10000 points you can receive 100 pounds </p>
-            <div id="Point to Exchange field">
-                <label for="pointsInput">Points to Exchange: </label>
-                <input type="number" id="pointsInput" min="10000" step="10000">
-            </div>
-            <section class="how_section layout_padding">
-                <div class="btn-box">
-                    <a onclick="swapPoints()" style="color:white" ;>Swap Points</a>
-                </div>
-            </section>
-            <p id="warning" class="warning"></p>
-            <p>Cash back amount: <span id="cashBackAmount">0</span></p>
-            <section class="how_section layout_padding">
-                <div class="btn-box">
-                    <a onclick="confirmRedirect()" style="color:white" ;>Confirm</a>
-                </div>
-            </section>
-        </div>
-
-
-
-
+    <div class="d-grid gap-2">
+        <button class="btn btn-full-width" type="button">ButtonButtonButtonButtonButtonButton</button>
+        <button class="btn btn-full-width" type="button">Button</button>
     </div>
     <!-- footer section -->
-    <section class="container-fluid footer_section">
+    <footer class="footer">
         <p>
             &copy; 2023 All Rights Reserved By On The Run
         </p>
-    </section>
+    </footer>
     <!-- footer section -->
 </body>
