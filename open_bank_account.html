@@ -30,273 +30,297 @@
   <link href="css/responsive.css" rel="stylesheet" />
 
   <style>
-    #form{
-        border: solid rgb(144, 141, 141);
-        background-color: rgb(235, 226, 226);
+    #form {
+      border: solid rgb(144, 141, 141);
+      background-color: rgb(235, 226, 226);
     }
-    .image{
-        justify-content: right;
-        align-items: end;
+
+    .image {
+      justify-content: right;
+      align-items: end;
     }
 
     .overlay {
-              position: fixed;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              background-color: rgba(0, 0, 0, 0.5);
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              z-index: 9999;
-            }
-  
-  .popup {
-              background-color: #ffffff;
-              padding: 20px;
-              border-radius: 5px;
-              text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
     }
-    #box{
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        
+
+    .popup {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
     }
-    #form{
-        background-color: transparent;
-        border: white;
+
+    #box {
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+
+    }
+
+    #form {
+      background-color: transparent;
+      border: white;
     }
 
     .btn-custom {
-    padding: 12px 30px;
-    font-size: 18px;
-  }
-  body {
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-  }
-  
-  section {
-    padding-right: 15px; /* Add padding to the right to prevent horizontal overflow */
-    padding-left: 15px; /* Add padding to the left to prevent horizontal overflow */
-    margin-right: auto;
-    margin-left: auto;
-  }
+      padding: 12px 30px;
+      font-size: 18px;
+    }
+
+    body {
+      overflow-x: hidden;
+      /* Hide horizontal scrollbar */
+    }
+
+    section {
+      padding-right: 15px;
+      /* Add padding to the right to prevent horizontal overflow */
+      padding-left: 15px;
+      /* Add padding to the left to prevent horizontal overflow */
+      margin-right: auto;
+      margin-left: auto;
+    }
 
 
-  body {
-  height: 100%;
-}
+    body {
+      height: 100%;
+    }
 
-.wrapper {
-  min-height: 100%;
-  position: relative;
-}
+    .wrapper {
+      min-height: 100%;
+      position: relative;
+    }
 
-.content {
-  padding-bottom: 200px; /* Adjust this value based on your footer's height */
-}
+    .content {
+      padding-bottom: 200px;
+      /* Adjust this value based on your footer's height */
+    }
 
-.footer {
-  background-color: black;
-  color: #636363;
-  text-align: center;
-  position: absolute;
-  bottom: -110px;
-  left: 0;
-  width: 100%;
-  padding: 20px 0;
-}
+    .footer {
+      background-color: black;
+      color: #636363;
+      text-align: center;
+      position: absolute;
+      bottom: -110px;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+    }
   </style>
 </head>
 
 <body>
-<div class="wrapper">
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <span>
-              Bank X
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+  <div class="wrapper">
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                Bank X
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="about.html"> Notifications </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="how.html"> Report an issue </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="login.html"> Logout</a>
-                </li>
-              </ul>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="about.html"> Notifications </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="how.html"> Report an issue </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.html"> Logout</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
-    <!-- slider section -->
-
-    <!-- end slider section -->
-  </div>
-  <section> <section>
-    <div class="row" id="box">
-      <div class="col-md-8 mb-4" id="form">
-        <div class="card mb-4"id="form">
-          <div class="heading_container" style="margin-top: 20px; margin-bottom: 20px;">
-            <h2>Account Opening Form</h2>
-          </div>
-          <div class="card-body">
-            <form>
-              <!-- 2 column grid layout with text inputs for the first and last names -->
-              <h5 style="font-weight: bold; font-size: x-large;">Personal Information</h5>
-              <div class="row mb-4" style="margin-top: 20px;">
-                <div class="col">
-                  <div class="form-outline">
-                    <label class="form-label" for="form6Example1">First name</label>
-                    <input type="text" id="Frist1" class="form-control" style="border: solid rgb(174, 170, 170);background-color: lightgray;"/>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-outline">
-                    <label class="form-label" for="form6Example2">Last name</label>
-                    <input type="text" id="Last1" class="form-control" style="border: solid rgb(174, 170, 170);background-color: lightgray;"/>
-                  </div>
-                </div>
-              </div>
-              
-  
-              <!-- Text input -->
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form6Example3">Birth date</label>
-                <input type="date" id="Birth" class="form-control" style="border: solid rgb(174, 170, 170);background-color: lightgray;"/>
-              </div>
-  
-              <!-- Text input -->
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form6Example4">Address</label>
-                <input type="text" id="Address1" class="form-control" placeholder="123 El-Sayda-Zainab, Cairo"style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
-              </div>
-  
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form6Example5">Email</label>
-                <input type="email" id="Email1" class="form-control" placeholder="example@gmail.com"style="border: solid rgb(174, 170, 170);background-color: lightgray;"/>
-              </div>
-  
-              <!-- Number input -->
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form6Example6">Phone</label>
-                <input type="number" id="Phone1" class="form-control" placeholder="20XXXXXXXXXX"style="border: solid rgb(174, 170, 170);background-color: lightgray;"/>
-              </div>
-
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form6Example4">Mother's Name</label>
-                <input type="text" id="MName" class="form-control" style="border: solid rgb(174, 170, 170);background-color: lightgray;" placeholder="Mamina"/>
-              </div>
-
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form6Example4">Mother's National Id Number</label>
-                <input type="number" id="MotherNational" class="form-control"style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
-              </div>
-              
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form6Example4">National Id Number</label>
-                <input type="number" id="National" class="form-control"style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
-              </div>
-
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form6Example4">Company name</label>
-                <input type="text" id="CompanyName" class="form-control"style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
-              </div>
-
-              <div class="form-outline mb-4">
-                <label class="form-label" for="form6Example4">Company Address</label>
-                <input type="text" id="ComapnyAdd" class="form-control"style="border: solid rgb(174, 170, 170);background-color: lightgray;" placeholder="1234 Ga3far-el-3omda Street , Cairo" />
-              </div>
-
-              <hr>
-              <h5 style="font-weight: bold; font-size: x-large;">Education Level</h5>
-              <div class="row mb-4" style="margin-left: 20px; margin-top: 20px;">
-                <div class="col">
-                  <div class="form-outline">
-
-
-
-              <label>
-                <input type="radio" name="education" value="highschool" id="High"> High School or Below
-              </label>
-              <br>
-              <label>
-                <input type="radio" name="education" value="undergraduate" id="Under"> Undergraduate
-              </label>
-              <br>
-              <label>
-                <input type="radio" name="education" value="masters" id="Master"> Master's Degree
-              </label>
-              <br>
-              <label>
-                <input type="radio" name="education" value="phd" id="PhD"> PhD
-              </label>
-                </div>
-            </div>
+          </nav>
         </div>
+      </header>
+      <!-- end header section -->
+      <!-- slider section -->
 
-
-            
-
-  
-  
-              <div class="form-check mb-4">
-                <input class="form-check-input" type="checkbox" value="" id="checkoutForm2" checked />
-                <label class="form-check-label" for="checkoutForm2">
-                  Save this information for next time
-                </label>
+      <!-- end slider section -->
+    </div>
+    <section>
+      <section>
+        <div class="row" id="box">
+          <div class="col-md-8 mb-4" id="form">
+            <div class="card mb-4" id="form">
+              <div class="heading_container" style="margin-top: 20px; margin-bottom: 20px;">
+                <h2>Account Opening Form</h2>
               </div>
-  
-              <hr class="my-4" />
-              
-  
-              <label for="account-type">Select Account Type:</label>
-              <br>
-                    <select id="account-type" name="account-type" style="margin-bottom: 15px; width: 400px; height: 30px;border: solid rgb(174, 170, 170);background-color: lightgray;">
-                        <option value="business">Business Account</option>
-                        <option value="personal">Personal Account</option>
-                        <option value="savings">Savings Account</option>
-                    </select>
+              <div class="card-body">
+                <form>
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <h5 style="font-weight: bold; font-size: x-large;">Personal Information</h5>
+                  <div class="row mb-4" style="margin-top: 20px;">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form6Example1">First name</label>
+                        <input type="text" id="Frist1" class="form-control"
+                          style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form6Example2">Last name</label>
+                        <input type="text" id="Last1" class="form-control"
+                          style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
+                      </div>
+                    </div>
+                  </div>
 
-                    <br>
 
-                <label for="account-type" style="margin-top: 20px;">Select Bank Account Currency:</label>
-                <br>
+                  <!-- Text input -->
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example3">Birth date</label>
+                    <input type="date" id="Birth" class="form-control"
+                      style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
+                  </div>
 
-                <select id="account-type" name="account-type" style="margin-bottom: 15px; width: 400px; height: 30px;border: solid rgb(174, 170, 170);background-color: lightgray;">
+                  <!-- Text input -->
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example4">Address</label>
+                    <input type="text" id="Address1" class="form-control" placeholder="123 El-Sayda-Zainab, Cairo"
+                      style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
+                  </div>
+
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example5">Email</label>
+                    <input type="email" id="Email1" class="form-control" placeholder="example@gmail.com"
+                      style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
+                  </div>
+
+                  <!-- Number input -->
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example6">Phone</label>
+                    <input type="number" id="Phone1" class="form-control" placeholder="20XXXXXXXXXX"
+                      style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example4">Mother's Name</label>
+                    <input type="text" id="MName" class="form-control"
+                      style="border: solid rgb(174, 170, 170);background-color: lightgray;" placeholder="Mamina" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example4">Mother's National Id Number</label>
+                    <input type="number" id="MotherNational" class="form-control"
+                      style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example4">National Id Number</label>
+                    <input type="number" id="National" class="form-control"
+                      style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example4">Company name</label>
+                    <input type="text" id="CompanyName" class="form-control"
+                      style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example4">Company Address</label>
+                    <input type="text" id="ComapnyAdd" class="form-control"
+                      style="border: solid rgb(174, 170, 170);background-color: lightgray;"
+                      placeholder="1234 Ga3far-el-3omda Street , Cairo" />
+                  </div>
+
+                  <hr>
+                  <h5 style="font-weight: bold; font-size: x-large;">Education Level</h5>
+                  <div class="row mb-4" style="margin-left: 20px; margin-top: 20px;">
+                    <div class="col">
+                      <div class="form-outline">
+
+
+
+                        <label>
+                          <input type="radio" name="education" value="highschool" id="High"> High School or Below
+                        </label>
+                        <br>
+                        <label>
+                          <input type="radio" name="education" value="undergraduate" id="Under"> Undergraduate
+                        </label>
+                        <br>
+                        <label>
+                          <input type="radio" name="education" value="masters" id="Master"> Master's Degree
+                        </label>
+                        <br>
+                        <label>
+                          <input type="radio" name="education" value="phd" id="PhD"> PhD
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+                  <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" value="" id="checkoutForm2" checked />
+                    <label class="form-check-label" for="checkoutForm2">
+                      Save this information for next time
+                    </label>
+                  </div>
+
+                  <hr class="my-4" />
+
+
+                  <label for="account-type">Select Account Type:</label>
+                  <br>
+                  <select id="account-type" name="account-type"
+                    style="margin-bottom: 15px; width: 400px; height: 30px;border: solid rgb(174, 170, 170);background-color: lightgray;">
+                    <option value="business">Business Account</option>
+                    <option value="personal">Personal Account</option>
+                    <option value="savings">Savings Account</option>
+                  </select>
+
+                  <br>
+
+                  <label for="account-type" style="margin-top: 20px;">Select Bank Account Currency:</label>
+                  <br>
+
+                  <select id="account-type" name="account-type"
+                    style="margin-bottom: 15px; width: 400px; height: 30px;border: solid rgb(174, 170, 170);background-color: lightgray;">
                     <option value="business">USD</option>
                     <option value="personal">EGP</option>
                     <option value="savings">EUR</option>
                     <option value="savings">TKL</option>
-                </select>
+                  </select>
 
 
 
-                <div class="form-outline mb-4">
+                  <div class="form-outline mb-4">
                     <label class="form-label" for="form6Example4" style="margin-top: 20px;">Monthly Salary</label>
-                    <input type="text" id="Salary" class="form-control"style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
+                    <input type="text" id="Salary" class="form-control"
+                      style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
                   </div>
 
                   <hr>
@@ -307,63 +331,89 @@
                     <div class="col">
                       <div class="form-outline">
                         <label class="form-label" for="form6Example1">First Name</label>
-                        <input type="text" id="First2" class="form-control" style="border: solid rgb(174, 170, 170);background-color: lightgray;"/>
+                        <input type="text" id="First2" class="form-control"
+                          style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
                       </div>
                     </div>
                     <div class="col">
                       <div class="form-outline">
                         <label class="form-label" for="form6Example2">Last Name</label>
-                        <input type="text" id="Last2" class="form-control" style="border: solid rgb(174, 170, 170);background-color: lightgray;"/>
+                        <input type="text" id="Last2" class="form-control"
+                          style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
                       </div>
                     </div>
                   </div>
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form6Example4">Address</label>
-                    <input type="text" id="Address2" class="form-control" placeholder="123 El-Sayda-Zainab, Cairo"style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
+                    <input type="text" id="Address2" class="form-control" placeholder="123 El-Sayda-Zainab, Cairo"
+                      style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
                   </div>
-      
+
                   <!-- Email input -->
                   <div class="row mb-4" style="margin-top: 20px;">
                     <div class="col">
                       <div class="form-outline">
                         <label class="form-label" for="form6Example1">Email</label>
-                        <input type="text" id="Email2" class="form-control" style="border: solid rgb(174, 170, 170);background-color: lightgray;"/>
+                        <input type="text" id="Email2" class="form-control"
+                          style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
                       </div>
                     </div>
                     <div class="col">
                       <div class="form-outline">
                         <label class="form-label" for="form6Example2">Phone Number</label>
-                        <input type="number" id="Phone2" class="form-control" style="border: solid rgb(174, 170, 170);background-color: lightgray;"/>
+                        <input type="number" id="Phone2" class="form-control"
+                          style="border: solid rgb(174, 170, 170);background-color: lightgray;" />
                       </div>
                     </div>
                   </div>
 
                   <hr>
 
-            
-              <div class="d-flex justify-content-center mt-4" id="btn">
-                <a href="credit_card_home.html" class="btn btn-primary btn-lg btn-custom" onclick="checkForm(event)" style="background-color: black; color: white;">Apply</a>
+
+                  <div class="d-flex justify-content-center mt-4" id="btn">
+                    <a href="credit_card_home.html" class="btn btn-primary btn-lg btn-custom" onclick="checkForm(event)"
+                      style="background-color: black; color: white;">Apply</a>
+                  </div>
+                </form>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="d-flex justify-content-start align-items-center mt-3" id="btn" style="padding-bottom: 20px;">
-      <button class="btn btn-primary btn-lg btn-custom mr-2" onclick="window.location.href='index.html'" style="margin-top: -70px;margin-left: 30px; background-color: black; color: white;">Back</button>
-    </div>
-  </section>
-  <footer class="footer">
-    <p>
-        &copy; 2023 All Rights Reserved By On The Run
-    </p>
-</footer>
+        <div class="d-flex justify-content-start align-items-center mt-3" id="btn" style="padding-bottom: 20px;">
+          <button class="btn btn-primary btn-lg btn-custom mr-2" onclick="window.location.href='index.html'"
+            style="margin-top: -70px;margin-left: 30px; background-color: black; color: white;">Back</button>
+        </div>
+      </section>
+      <div
+class="d-flex justify-content-start align-items-center mt-3"
+id="btn"
+style="padding-bottom: 20px"
+>
+<button
+  class="btn btn-primary btn-lg btn-custom mr-2"
+  onclick="window.location.href='bank_accounts_home.html'"
+  style="
+    background-color: black;
+    color: white;
+    border:0px;
+    margin-top: 0 px;
+    margin-left: 30px;
+  "
+>
+  Back
+</button>
 </div>
+      <footer class="footer">
+        <p>
+          &copy; 2023 All Rights Reserved By On The Run
+        </p>
+      </footer>
+  </div>
 </body>
 
-  <script>
-function checkForm(event) {
+<script>
+  function checkForm(event) {
     event.preventDefault(); // Prevent form submission for now
 
     // Get form field values
@@ -387,12 +437,12 @@ function checkForm(event) {
     const emergencyPhoneNumber = document.getElementById("Phone2").value.trim();
 
 
-      if (firstName && lastName && birthDate && phoneNumber && address && email && motherName && motherNationalId && nationalId && companyName && companyAddress && educationLevel && emergencyFirstName && emergencyLastName && emergencyEmail && emergencyPhoneNumber && emergencyAddress && monthlySalary) {
-        alert("Your request has been sent to the bank, kindly wait for approval :D");
-        window.location.href = "bank_accounts_home.html";
-      } else {
-        alert("Please fill in all the required fields.");
-      }
+    if (firstName && lastName && birthDate && phoneNumber && address && email && motherName && motherNationalId && nationalId && companyName && companyAddress && educationLevel && emergencyFirstName && emergencyLastName && emergencyEmail && emergencyPhoneNumber && emergencyAddress && monthlySalary) {
+      alert("Your request has been sent to the bank, kindly wait for approval :D");
+      window.location.href = "bank_accounts_home.html";
+    } else {
+      alert("Please fill in all the required fields.");
     }
-    
-  </script>
+  }
+
+</script>
